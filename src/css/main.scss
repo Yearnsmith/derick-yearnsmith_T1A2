@@ -1,5 +1,8 @@
 //Vars
-
+$colour-bg: hsla(192, 100%, 11%, 1);
+$colour-cursor-start: $colour-bg;
+$colour-cursor: hsla(175, 59%, 40%,1);
+$colour-text:hsla(44, 87%, 94%, 1);
 /*reset*/
 html {
   font-size: 16px;
@@ -7,4 +10,29 @@ html {
   padding: 0px;
   font-weight: 600;
   line-height: 1.5;
+  font-family: 'Courier New', Courier, monospace;
+  box-sizing: border-box;
+}
+body{
+  font-size: 1em;
+  color:#bbb;
+  background:$colour-bg;
+}
+.intro-box {
+  padding:0;
+  margin:0;
+  display:grid;
+  grid-template-columns:repeat(10, 1ch);
+  grid-template-rows:repeat(5,1em);
+  line-height: 1;
+  font-size:4rem;
+}
+
+.intro-text{
+  grid-column-start: 1;
+  grid-column-end: 11;
+  grid-row-start: 1;
+  grid-row-end:6;
+  padding:0;
+  margin:0;
 }
