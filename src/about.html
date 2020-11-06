@@ -21,12 +21,58 @@
     </header>
 
     <main id="main">
-      <article class="intro-box">
-            <div class="intro-text">
-              Hi!<br>
-              I'm a full stack dev with front end flair.
-            </div>
-      </article><!--/.intro-box-->
+      <h2>About</h2>
+      
+      <section id="biography">
+        <!--The .dual-flex-box begins as one column in small width, and expande to become a two column layout on larger screens. The .sml-box should shrink to be supplimentary to .lrg-box's content i.e. image, aside, etc. -->
+        <div id="dual-flex-box">
+          <figure class="sml-box">
+            <img src="images/headshot.png" alt="Derick's face">
+            <figcaption>Derick looking confused</figcaption>
+          </figure><!--/.sml-box-->
+
+          <div class="lrg-box">
+            <p>
+              Biography Goes Here.
+            </p>
+          </div><!--/.lrg-box-->
+
+        </div><!--/.dual-flex-box-->
+      </section><!--/#biography-->
+
+      <section id="experience">
+        <h3>Experience</h3>
+        <div class="dual-column-flex">
+          <div class="lrg-box">
+            <h4>TL/DR</h4>
+            <ul>
+              <li>words</li>
+              <li>words</li>
+              <li>words</li>
+            </ul>
+          </div><!--.lrg-box-->
+          <aside class="sml-box">
+            <p>Download my resume:</p>
+            <button>Derick's Resume</button>
+          </aside><!--/.sml-box-->
+        </div><!--/.dual-column-flex-->
+        <div class="ful-width-content">
+          <p>Experience Goes Here</p>
+        </div><!--/.full-width-content-->
+      </section><!--/#experience-->
+
+      <section id="sup-info">
+        <div class="full-width-content">
+          <ul>
+            <li>First Point</li>
+            <li>Second Point</li>
+            <li>Third Point</li>
+            <li>Fourth Point</li>
+            <li>Fifth Point</li>
+          </ul>
+        </div><!--/.full-width-content-->
+      </section><!--/#sup-info-->
+
     </main>
 
     <footer>
