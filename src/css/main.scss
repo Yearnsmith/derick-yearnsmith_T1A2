@@ -1,8 +1,40 @@
 //Vars
-$colour-bg: hsla(192, 100%, 11%, 1);
+// Colours from Solarized (ethanschoonover.com/solarized)
+/*notes on usage:
+Dark colorscheme: bg & body => base03:base0 (not base00)
+highlighted bg & body => base02:base1.
+>> The L*a*b lightness difference between base03:base0
+   and base02:base1 is identical by design, resulting
+   in identical readability against both normal and
+   highlighted backgrounds.*/
+
+//color value      //  DARK            LIGHT
+//-----------------//--------------//-----------------
+$base03:#002b36; // background   // nil
+$base02:#073642; // bg hilight   // nil
+$base01:#586e75; // 2ndy content // em content
+$base00:#657b83; // nil          // body text
+$base0:#839496;  // body text    // nil
+$base1:#93a1a1;  // em content   // 2ndy content
+$base2:#eee8d5;  // nil          // bg hilight
+$base3:#fdf6e3;  // nil          // background
+//highlights
+$yellow:#b58900;
+$orange:#cb4b16;
+$red:#dc322f;
+$magenta:#d33682;
+$violet:#6c71c4;
+$blue:#268bd2;
+$cyan:#2aa198;
+$green:#859900; //I may modify this one...
+
+// Page Colours
+$colour-bg:$base03;
 $colour-cursor-start: $colour-bg;
-$colour-cursor: hsla(175, 59%, 40%,1);
-$colour-text:hsla(44, 87%, 94%, 1);
+$colour-cursor: $blue;
+$colour-text: $base0;
+
+
 /*reset*/
 html {
   font-size: 16px;
