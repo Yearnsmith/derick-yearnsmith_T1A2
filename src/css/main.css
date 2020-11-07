@@ -1,18 +1,112 @@
+/*notes on usage:
+Dark colorscheme: bg & body => base03:base0 (not base00)
+highlighted bg & body => base02:base1.
+>> The L*a*b lightness difference between base03:base0
+   and base02:base1 is identical by design, resulting
+   in identical readability against both normal and
+   highlighted backgrounds.*/
 /*reset*/
 html {
+  margin: 0;
+  padding: 0;
   font-size: 16px;
-  margin: 0px;
-  padding: 0px;
   font-weight: 600;
   line-height: 1.5;
   font-family: "Courier New", Courier, monospace;
   box-sizing: border-box;
+  min-height: 100vh;
 }
 
 body {
+  margin: 0;
+  padding: 0;
   font-size: 1em;
   color: #bbb;
-  background: #002d38;
+  background: #002b36;
+  min-width: 100vw;
+}
+
+h2, h3, h4, h5, h6 {
+  padding: 0;
+  background: #268bd2;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: #073642;
+  padding-left: 2rem;
+  line-height: 1;
+  margin: 1.5rem 0 0 0;
+}
+h2 a, h3 a, h4 a, h5 a, h6 a {
+  text-decoration: none;
+}
+
+h1 a {
+  padding: 0;
+  background: #268bd2;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: #073642;
+  text-decoration: none;
+  background: #2aa198;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2.5rem;
+}
+
+h4 {
+  font-size: 2rem;
+}
+
+h5 {
+  font-size: 1.5rem;
+}
+
+h6 {
+  font: italic 1.5rem bold;
+}
+
+p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+p, li {
+  font-size: 1.25rem;
+  line-height: 1.75;
+  margin: 0 auto;
+  margin-top: 1rem;
+  max-width: 66ch;
+}
+
+ul {
+  margin: 0 auto;
+  padding-left: 6ch;
+}
+ul li {
+  margin: 0.25rem 0 0 1ch;
+}
+
+.full-width-content {
+  width: 90vw;
+  margin: 0 auto;
+}
+
+header nav a {
+  display: block;
+  max-width: 40%;
+  font-size: 1.5rem;
+  color: #657b83;
+  background: #073642;
+  padding: 0.15em 0.5em;
 }
 
 .intro-box {

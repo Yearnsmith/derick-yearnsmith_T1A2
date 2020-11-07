@@ -34,22 +34,102 @@ $colour-cursor-start: $colour-bg;
 $colour-cursor: $blue;
 $colour-text: $base0;
 
+/////////// @mixins /////////
+@mixin margin-padding{
+  margin:0;
+  padding:0;
+}
+@mixin highlight-text {
+  padding:0;
+  background:$blue;
+  width:-moz-fit-content;
+  width:fit-content;
+  color:$base02;
+}
+
 
 /*reset*/
 html {
+  @include margin-padding();
   font-size: 16px;
-  margin: 0px;
-  padding: 0px;
   font-weight: 600;
   line-height: 1.5;
   font-family: 'Courier New', Courier, monospace;
   box-sizing: border-box;
+  min-height:100vh;
 }
 body{
+@include margin-padding();
   font-size: 1em;
   color:#bbb;
   background:$colour-bg;
+  min-width:100vw;
 }
+
+// div,p,header,main,ul,li{border:1px solid black}
+////// Typography///////////
+/// Headers //
+//Base
+h2,h3,h4,h5,h6{
+  @include highlight-text();
+  padding-left:2rem;
+  line-height: 1;
+  margin:1.5rem 0 0 0;
+  a{
+    text-decoration:none;
+  }
+}
+h1{
+  a{
+    @include highlight-text();
+    text-decoration:none;
+    background:$cyan;
+  }
+}
+// Heading Sizing:
+h1{font-size:3rem}
+h2{font-size:3rem;}
+h3{font-size:2.5rem;}
+h4{font-size:2rem;}
+h5{font-size:1.5rem;}
+h6{font: italic 1.5rem bold;}
+
+//content
+p,ul,li{
+@include margin-padding();
+}
+
+p,li{
+  font-size:1.25rem;
+  line-height: 1.75;
+  margin:0 auto;
+  margin-top:1rem;
+  max-width:66ch;
+}
+ul{
+  margin:0 auto;
+  padding-left:6ch;
+  li{margin:.25rem 0 0 1ch;}
+}
+.full-width-content{
+  width:90vw;
+  margin:0 auto;
+}
+
+header nav{
+  
+  a{
+    display:block;
+    max-width:40%;
+    font-size:1.5rem;
+    color:$base00;
+    background:$base02;
+    padding:.15em .5em;
+  }
+}
+/////// Layout /////////
+
+//index.html specific
 .intro-box {
   padding:0;
   margin:0;
