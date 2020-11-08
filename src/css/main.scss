@@ -111,9 +111,6 @@ h5{  font-size:1.5rem;}
 h6{  font: italic 1.5rem bold;}
 
 //content
-
-
-
 p,ul,li{
 @include margin-padding();
 }
@@ -130,13 +127,9 @@ ul{
   padding-left:6ch;
   li{margin:.25rem 0 0 1ch;}
 }
-.full-width-content{
-  width:90vw;
-  margin:0 auto;
-}
 
 header nav{
-  
+ 
   a{
     font-size:1.5rem;
     color:$base1;
@@ -169,6 +162,45 @@ footer{
 
 /////// Layout /////////
 /*This is in order of specificity — with less specific first*/
+.two-column-flex{
+  @include margin-padding();
+  display:flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-content: space-between;
+  .lrg-box{
+    @include margin-padding();
+    flex-grow: 3;
+    flex-basis:60%;
+    p{
+      padding-left:2ch;
+    }
+  }
+  .sml-box{
+    @include margin-padding();
+    flex-shrink:2;
+    flex-grow:1;
+    flex-basis:calc(100%/3);
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: space-around;
+    img{;
+      height:auto;
+      min-width:150px;
+      width:100%;
+      max-width:275px;
+    }
+  }
+  h4{  @include margin-padding(); }
+  #tldr{  border:.25em solid $cyan; }
+  #resume{  background: $cyan; padding-bottom:1em; }
+}
+.full-width-content{
+  width:90vw;
+  margin:0 auto;
+}
+
 // Hide skip to main link
 #skip-to-main{
   position: absolute;
@@ -183,6 +215,7 @@ footer{
     top:0;
     left:1ch;
   }
+  // from https://css-tricks.com/the-shapes-of-css/#triangle-down-shape:
   &::after{
     content: "";
     position:absolute;
@@ -193,6 +226,9 @@ footer{
     border-top:.75em solid $yellow;
   }
 }
+
+
+
 //index.html specific
 .intro-box {
   padding:0;
