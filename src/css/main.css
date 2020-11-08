@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 /*notes on usage:
 Dark colorscheme: bg & body => base03:base0 (not base00)
 highlighted bg & body => base02:base1.
@@ -10,9 +11,9 @@ html {
   margin: 0;
   padding: 0;
   font-size: 16px;
-  font-weight: 600;
-  line-height: 1.5;
-  font-family: "Courier New", Courier, monospace;
+  font-weight: normal;
+  line-height: 1.25;
+  font-family: "Anonymous Pro", "Courier New", Courier, monospace;
   box-sizing: border-box;
   min-height: 100vh;
 }
@@ -26,44 +27,69 @@ body {
   min-width: 100vw;
 }
 
+a:link {
+  text-decoration: none;
+  color: #268bd2;
+  border-bottom: 0.15em solid #268bd2;
+}
+
+a:visited {
+  color: #268bd2;
+  border-bottom-color: #268bd2;
+}
+
+.current-page {
+  background-color: #268bd2;
+  color: #002b36;
+}
+
 h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  font-family: "Courier Prime";
   padding: 0;
-  background: #268bd2;
+  background: #2aa198;
   width: -moz-fit-content;
   width: fit-content;
-  color: #073642;
+  color: #002b36;
   padding-left: 2rem;
   line-height: 1;
-  margin: 1.5rem 0 0 0;
-}
-h2 a, h3 a, h4 a, h5 a, h6 a {
-  text-decoration: none;
 }
 
+h1 {
+  font-family: "Courier Prime";
+}
 h1 a {
   padding: 0;
-  background: #268bd2;
+  background: #2aa198;
   width: -moz-fit-content;
   width: fit-content;
-  color: #073642;
-  text-decoration: none;
-  background: #2aa198;
+  color: #002b36;
+  background: #268bd2;
+  border: none;
+}
+h1 a:visited {
+  color: #002b36;
+  border: none;
 }
 
+/*line-height from: https://grtcalculator.com/, sizing rules from:http://webtypography.net*/
 h1 {
   font-size: 3rem;
 }
 
 h2 {
   font-size: 3rem;
+  margin: 1.4117em 0 0.7058em;
 }
 
 h3 {
   font-size: 2.5rem;
+  margin: 1.1764em 0 0.5882em;
 }
 
 h4 {
   font-size: 2rem;
+  margin: 0.9411 0 0.4705;
 }
 
 h5 {
@@ -81,14 +107,13 @@ p, ul, li {
 
 p, li {
   font-size: 1.25rem;
-  line-height: 1.75;
-  margin: 0 auto;
-  margin-top: 1rem;
-  max-width: 66ch;
+  line-height: 1.7;
+  margin: 1.7em auto;
+  max-width: 62.5ch;
 }
 
 ul {
-  margin: 0 auto;
+  margin: 1.5em auto;
   padding-left: 6ch;
 }
 ul li {
@@ -101,12 +126,25 @@ ul li {
 }
 
 header nav a {
-  display: block;
-  max-width: 40%;
   font-size: 1.5rem;
-  color: #657b83;
-  background: #073642;
-  padding: 0.15em 0.5em;
+  color: #93a1a1;
+}
+
+footer {
+  font-size: 1rem;
+}
+footer a:link {
+  color: #93a1a1;
+  border: none;
+}
+footer a:visited {
+  color: #93a1a1;
+  border: none;
+}
+footer .current-page {
+  color: #93a1a1;
+  background: none;
+  border-bottom: 1px solid #93a1a1;
 }
 
 .intro-box {

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 //Vars
 // Colours from Solarized (ethanschoonover.com/solarized)
 /*notes on usage:
@@ -31,8 +33,9 @@ $green:#859900; //I may modify this one...
 // Page Colours
 $colour-bg:$base03;
 $colour-cursor-start: $colour-bg;
-$colour-cursor: $blue;
+$colour-cursor: $cyan;
 $colour-text: $base0;
+$colour-link:$blue;
 
 /////////// @mixins /////////
 @mixin margin-padding{
@@ -41,10 +44,10 @@ $colour-text: $base0;
 }
 @mixin highlight-text {
   padding:0;
-  background:$blue;
+  background:$cyan;
   width:-moz-fit-content;
   width:fit-content;
-  color:$base02;
+  color:$base03;
 }
 
 
@@ -52,9 +55,9 @@ $colour-text: $base0;
 html {
   @include margin-padding();
   font-size: 16px;
-  font-weight: 600;
-  line-height: 1.5;
-  font-family: 'Courier New', Courier, monospace;
+  font-weight: normal;
+  line-height: 1.25;
+  font-family: 'Anonymous Pro','Courier New', Courier, monospace;
   box-sizing: border-box;
   min-height:100vh;
 }
@@ -68,46 +71,61 @@ body{
 
 // div,p,header,main,ul,li{border:1px solid black}
 ////// Typography///////////
+///links///
+a:link{
+  text-decoration:none;
+  color:$colour-link;
+  border-bottom:.15em solid $colour-link;
+}
+a:visited{
+  color:$colour-link;
+  border-bottom-color:$colour-link;
+}
+.current-page{
+  background-color:$colour-link;
+  color:$colour-bg;
+}
 /// Headers //
-//Base
 h2,h3,h4,h5,h6{
+  font-weight:700;
+  font-family: 'Courier Prime';
   @include highlight-text();
   padding-left:2rem;
   line-height: 1;
-  margin:1.5rem 0 0 0;
-  a{
-    text-decoration:none;
-  }
 }
 h1{
+  font-family:'Courier Prime';
   a{
     @include highlight-text();
-    text-decoration:none;
-    background:$cyan;
+    background:$colour-link;
+    border:none;
   }
+  a:visited{  color:$colour-bg; border:none;}
 }
 // Heading Sizing:
+/*line-height from: https://grtcalculator.com/, sizing rules from:http://webtypography.net*/ 
 h1{font-size:3rem}
-h2{font-size:3rem;}
-h3{font-size:2.5rem;}
-h4{font-size:2rem;}
-h5{font-size:1.5rem;}
-h6{font: italic 1.5rem bold;}
+h2{  font-size:3rem; margin:1.4117em 0 .7058em; }
+h3{  font-size:2.5rem; margin:1.1764em 0 .5882em; }
+h4{  font-size:2rem; margin:.9411 0 .4705; }
+h5{  font-size:1.5rem;}
+h6{  font: italic 1.5rem bold;}
 
 //content
+
 p,ul,li{
 @include margin-padding();
 }
 
 p,li{
   font-size:1.25rem;
-  line-height: 1.75;
-  margin:0 auto;
-  margin-top:1rem;
-  max-width:66ch;
+  line-height: 1.7;
+  margin:1.7em auto;
+  max-width:62.5ch;
 }
+
 ul{
-  margin:0 auto;
+  margin:1.5em auto;
   padding-left:6ch;
   li{margin:.25rem 0 0 1ch;}
 }
@@ -119,12 +137,18 @@ ul{
 header nav{
   
   a{
-    display:block;
-    max-width:40%;
     font-size:1.5rem;
-    color:$base00;
-    background:$base02;
-    padding:.15em .5em;
+    color:$base1;
+  }
+}
+footer{
+  font-size:1rem;
+  a:link{ color:$base1; border:none; }
+  a:visited{  color:$base1; border:none; }
+  .current-page{
+    color:$base1;
+    background:none;
+    border-bottom:1px solid $base1;
   }
 }
 /////// Layout /////////
