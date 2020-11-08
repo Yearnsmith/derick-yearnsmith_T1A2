@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 /*notes on usage:
 Dark colorscheme: bg & body => base03:base0 (not base00)
@@ -133,18 +134,50 @@ header nav a {
 footer {
   font-size: 1rem;
 }
-footer a:link {
+footer a:link, footer a:visited {
   color: #93a1a1;
   border: none;
 }
-footer a:visited {
-  color: #93a1a1;
-  border: none;
-}
-footer .current-page {
+footer a.current-page {
   color: #93a1a1;
   background: none;
   border-bottom: 1px solid #93a1a1;
+}
+
+#skip-to-main {
+  font-size: 3rem;
+  font-weight: 600;
+  border: none;
+  text-align: center;
+}
+#skip-to-main:focus {
+  text-decoration: underline;
+  text-transform: capitalize;
+}
+
+/*This is in order of specificity — with less specific first*/
+#skip-to-main {
+  position: absolute;
+  top: -15rem;
+  left: 0;
+  display: block;
+  width: 5ch;
+  padding: 0.5em 1ch 0;
+  background: #b58900;
+  color: #002b36;
+}
+#skip-to-main:focus {
+  top: 0;
+  left: 1ch;
+}
+#skip-to-main::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4.25em;
+  border-left: 3.5ch solid transparent;
+  border-right: 3.5ch solid transparent;
+  border-top: 0.75em solid #b58900;
 }
 
 .intro-box {

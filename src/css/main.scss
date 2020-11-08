@@ -50,7 +50,6 @@ $colour-link:$blue;
   color:$base03;
 }
 
-
 /*reset*/
 html {
   @include margin-padding();
@@ -113,6 +112,8 @@ h6{  font: italic 1.5rem bold;}
 
 //content
 
+
+
 p,ul,li{
 @include margin-padding();
 }
@@ -143,16 +144,55 @@ header nav{
 }
 footer{
   font-size:1rem;
-  a:link{ color:$base1; border:none; }
-  a:visited{  color:$base1; border:none; }
-  .current-page{
+  a{
+    &:link,&:visited{
+      color:$base1;
+      border:none;
+    }
+    &.current-page{
     color:$base1;
     background:none;
     border-bottom:1px solid $base1;
+    }
   }
 }
-/////// Layout /////////
+#skip-to-main{
+  font-size:3rem;
+  font-weight:600;
+  border:none;
+  text-align: center;
+  &:focus{
+    text-decoration: underline;
+    text-transform: capitalize;
+  }
+}
 
+/////// Layout /////////
+/*This is in order of specificity — with less specific first*/
+// Hide skip to main link
+#skip-to-main{
+  position: absolute;
+  top:-15rem;
+  left:0;
+  display: block;
+  width:5ch;
+  padding:.5em 1ch 0;
+  background:$yellow;
+  color:$colour-bg;
+  &:focus{
+    top:0;
+    left:1ch;
+  }
+  &::after{
+    content: "";
+    position:absolute;
+    left:0;
+    top:4.25em;
+    border-left: 3.5ch solid transparent;
+    border-right: 3.5ch solid transparent;
+    border-top:.75em solid $yellow;
+  }
+}
 //index.html specific
 .intro-box {
   padding:0;
