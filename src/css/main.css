@@ -13,7 +13,6 @@ html {
   padding: 0;
   font-size: 16px;
   font-weight: normal;
-  line-height: 1.25;
   font-family: 'Anonymous Pro','Courier New', Courier, monospace;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -26,7 +25,6 @@ body {
   font-size: 1em;
   color: #bbb;
   background: #002b36;
-  min-width: 100vw;
 }
 
 a:link {
@@ -43,6 +41,18 @@ a:visited {
 .current-page {
   background-color: #268bd2;
   color: #002b36;
+}
+
+.display-url, .display-url:link, .display-url:visited {
+  padding: 0;
+  background: #2aa198;
+  width: -moz-fit-content;
+  width: -webkit-fit-content;
+  width: fit-content;
+  color: #002b36;
+  background-color: #268bd2;
+  color: #002b36;
+  font-weight: bold;
 }
 
 h2, h3, h4, h5, h6 {
@@ -81,6 +91,7 @@ h1 a:visited {
 /*line-height from: https://grtcalculator.com/, sizing rules from:http://webtypography.net*/
 h1 {
   font-size: 3rem;
+  padding: 0;
 }
 
 h2 {
@@ -91,6 +102,7 @@ h2 {
 h3 {
   font-size: 2.5rem;
   margin: 1.1764em 0 .5882em;
+  width: initial;
 }
 
 h4 {
@@ -241,6 +253,86 @@ footer a.current-page {
   margin: 0 auto;
 }
 
+header nav {
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  width: 12em;
+  height: 2.65em;
+  overflow: hidden;
+  -webkit-transition: height 1s ease-in-out;
+  transition: height 1s ease-in-out;
+}
+
+header nav a {
+  margin: 0;
+  padding: 0;
+  padding: .25em;
+}
+
+header nav a:link, header nav a:visited {
+  border: 0.15em solid #268bd2;
+  border-bottom: none;
+}
+
+header nav a:link:last-child, header nav a:visited:last-child {
+  border-bottom: 0.15em solid #268bd2;
+}
+
+header nav .more-link, header nav .more-link:link, header nav .more-link:visited {
+  background: #268bd2;
+  color: #002b36;
+  font-weight: bold;
+}
+
+header nav .more-link:after, header nav .more-link:link:after, header nav .more-link:visited:after {
+  content: "\25bc";
+  font-weight: bold;
+  position: absolute;
+  left: 6.5em;
+}
+
+header nav .less-link {
+  display: none;
+  font-weight: bold;
+  background: #268bd2;
+  color: #002b36;
+}
+
+header nav .current-page {
+  display: none;
+}
+
+#navigation:target {
+  scroll-margin-top: 5em;
+  scroll-snap-align: start;
+}
+
+#navigation:target nav {
+  height: 12.6em;
+}
+
+#navigation:target nav .more-link {
+  display: none;
+}
+
+#navigation:target nav .less-link {
+  display: initial;
+}
+
+#navigation:target nav .less-link:after {
+  content: "\25b2";
+  font-weight: bold;
+  position: absolute;
+  left: 6.5em;
+}
+
 #skip-to-main {
   position: absolute;
   top: -15rem;
@@ -250,6 +342,7 @@ footer a.current-page {
   padding: .5em 1ch 0;
   background: #b58900;
   color: #002b36;
+  z-index: 999;
 }
 
 #skip-to-main:focus {
@@ -261,10 +354,11 @@ footer a.current-page {
   content: "";
   position: absolute;
   left: 0;
-  top: 4.25em;
+  top: 3.52em;
   border-left: 3.5ch solid transparent;
   border-right: 3.5ch solid transparent;
   border-top: 0.75em solid #b58900;
+  z-index: 1000;
 }
 
 .intro-box {

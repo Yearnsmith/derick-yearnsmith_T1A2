@@ -55,7 +55,7 @@ html {
   @include margin-padding();
   font-size: 16px;
   font-weight: normal;
-  line-height: 1.25;
+  // line-height: 1.25;
   font-family: 'Anonymous Pro','Courier New', Courier, monospace;
   box-sizing: border-box;
   min-height:100vh;
@@ -65,7 +65,7 @@ body{
   font-size: 1em;
   color:#bbb;
   background:$colour-bg;
-  min-width:100vw;
+  // min-width:100vw;
 }
 
 // div,p,header,main,ul,li{border:1px solid black}
@@ -83,6 +83,13 @@ a:visited{
 .current-page{
   background-color:$colour-link;
   color:$colour-bg;
+}
+.display-url{
+  @include highlight-text();
+  background-color: $colour-link;
+  color:$colour-bg;
+  font-weight:bold;
+  &:link,&:visited{@extend .display-url;}
 }
 /// Headers //
 h2,h3,h4,h5,h6{
@@ -103,9 +110,9 @@ h1{
 }
 // Heading Sizing:
 /*line-height from: https://grtcalculator.com/, sizing rules from:http://webtypography.net*/ 
-h1{font-size:3rem}
+h1{font-size:3rem;padding:0;}
 h2{  font-size:3rem; margin:1.4117em 0 .7058em; }
-h3{  font-size:2.5rem; margin:1.1764em 0 .5882em; }
+h3{  font-size:2.5rem; margin:1.1764em 0 .5882em; width:initial; }
 h4{  font-size:2rem; margin:.9411 0 .4705; }
 h5{  font-size:1.5rem;}
 h6{  font: italic 1.5rem bold;}
@@ -185,7 +192,7 @@ footer{
     flex-direction:column;
     align-items: center;
     justify-content: space-around;
-    img{;
+    img{
       height:auto;
       min-width:150px;
       width:100%;
@@ -200,7 +207,66 @@ footer{
   width:90vw;
   margin:0 auto;
 }
-
+//Mobile-first Menu
+header nav{
+  @include margin-padding();
+  display:flex;
+  flex-flow:column;
+  width:12em;
+  height:2.65em;
+  overflow: hidden;
+  transition:height 1s ease-in-out;
+  a{
+    @include margin-padding();
+    padding:.25em;
+   &:link,
+   &:visited{
+    border:.15em solid $colour-link;
+    border-bottom:none;
+    }
+    &:link:last-child,
+    &:visited:last-child{
+      border-bottom:.15em solid $colour-link;
+    }
+  }
+  .more-link{
+    background:$colour-link;
+    color:$colour-bg;
+    font-weight:bold;
+    &:link{     @extend .more-link; }
+    &:visited{  @extend .more-link; }
+    &:after{
+      content:"\25bc";
+      font-weight:bold;
+      position:absolute;
+      left:6.5em;
+    }
+  }
+  .less-link{
+    display:none;
+    font-weight:bold;
+    background:$colour-link;
+    color:$colour-bg;
+  }
+  .current-page{display:none;}
+}
+#navigation:target{
+  scroll-margin-top:5em;
+  scroll-snap-align:start;
+ nav{
+  height:12.6em;
+    .more-link{  display:none; }
+    .less-link{
+      display: initial;
+      &:after{
+        content:"\25b2";
+        font-weight:bold;
+        position:absolute;
+        left:6.5em;
+      }
+}
+}
+}
 // Hide skip to main link
 #skip-to-main{
   position: absolute;
@@ -211,6 +277,7 @@ footer{
   padding:.5em 1ch 0;
   background:$yellow;
   color:$colour-bg;
+  z-index:999;
   &:focus{
     top:0;
     left:1ch;
@@ -220,14 +287,13 @@ footer{
     content: "";
     position:absolute;
     left:0;
-    top:4.25em;
+    top:3.52em;
     border-left: 3.5ch solid transparent;
     border-right: 3.5ch solid transparent;
     border-top:.75em solid $yellow;
+    z-index: 1000;
   }
 }
-
-
 
 //index.html specific
 .intro-box {
