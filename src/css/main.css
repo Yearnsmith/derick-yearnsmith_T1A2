@@ -381,13 +381,31 @@ form {
           flex-direction: column;
 }
 
-form input, form label textarea {
+form input, form input.error-input, form label textarea {
   height: 1.7em;
   padding: 0 .5ch;
   font: 400 1.25rem/1.7 'Anonymous Pro','Courier New', Courier, Monospace;
   background: #073642;
   color: #93a1a1;
+  border: 0.15em solid #002b36;
+}
+
+form input:focus, form label textarea:focus {
   border: 0.15em solid #2aa198;
+  outline: #2aa198 solid 0.25em;
+}
+
+form input:required + ::before, form label textarea:required + ::before {
+  content: ">Required";
+  padding: 0;
+  background: #2aa198;
+  width: -moz-fit-content;
+  width: -webkit-fit-content;
+  width: fit-content;
+  color: #002b36;
+  font-weight: bold;
+  padding: 0.25ch .5ch;
+  margin-right: 1ch;
 }
 
 form input#submit-contact, form label textarea#submit-contact {
@@ -395,6 +413,40 @@ form input#submit-contact, form label textarea#submit-contact {
   color: #002b36;
   font-weight: bold;
   margin-top: 1.7em;
+  height: auto;
+}
+
+form input.error-input:invalid, form label textarea.error-input:invalid {
+  background-color: #dc322f;
+  color: #002b36;
+  font-weight: bold;
+  padding: .15em;
+  border-color: #dc322f !important;
+  padding: 0 .5ch;
+}
+
+form input.error-input:invalid::-webkit-input-placeholder, form label textarea.error-input:invalid::-webkit-input-placeholder {
+  color: #002b36;
+}
+
+form input.error-input:invalid:-ms-input-placeholder, form label textarea.error-input:invalid:-ms-input-placeholder {
+  color: #002b36;
+}
+
+form input.error-input:invalid::-ms-input-placeholder, form label textarea.error-input:invalid::-ms-input-placeholder {
+  color: #002b36;
+}
+
+form input.error-input:invalid::placeholder, form label textarea.error-input:invalid::placeholder {
+  color: #002b36;
+}
+
+form input.error-input:invalid + ::after, form label textarea.error-input:invalid + ::after {
+  background-color: #dc322f;
+  color: #002b36;
+  font-weight: bold;
+  padding: .15em;
+  content: ">Error";
 }
 
 form label {

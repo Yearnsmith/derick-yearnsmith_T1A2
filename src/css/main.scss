@@ -50,7 +50,12 @@ $colour-link:$blue;
   color:$base03;
   font-weight: bold;
 }
-
+@mixin error-text{
+  background-color:$red;
+  color:$base03;
+  font-weight:bold;
+  padding:.15em;
+}
 //responsive image
 @mixin resposive-img(){
   @include margin-padding();
@@ -287,12 +292,40 @@ form{
     font:400 1.25rem/1.7 'Anonymous Pro','Courier New', Courier, Monospace;
     background:$base02;
     color:$base1;
-    border:.15em solid $cyan;
+    border:.15em solid $colour-bg;
+    &:focus{
+      border:.15em solid $cyan;
+      outline: $cyan solid .25em;
+    }
+    &:required+::before{
+      content:">Required";
+      @include highlight-text();
+      padding:0.25ch .5ch;
+      margin-right:1ch;  
+    }
     &#submit-contact{
       background:$cyan;
       color:$colour-bg;
       font-weight:bold;
       margin-top:1.7em;
+      // padding:.5ch 0;
+      height:auto;
+    }
+    &.error-input{
+      //modified from https://usefulangle.com/post/244/html-form-prevent-validation-on-page-load
+      @extend input;
+      &:invalid{
+        @include error-text();
+        border-color:$red !important;
+        padding:0 .5ch;
+        &::placeholder{
+          color:$base03;
+        }
+        &+::after{
+          @include error-text();
+          content:">Error";
+        }
+      }
     }
   }
   label{
@@ -303,7 +336,6 @@ form{
     textarea{
       @extend input;
       height:8.5em;
-      // height:170px;
     }
   }
 
