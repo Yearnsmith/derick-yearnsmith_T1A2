@@ -7,11 +7,12 @@
     <link rel="stylesheet" href="css/main.css" type="text/css">
   </head>
   <body>
-    <img  id="splash-image" src="images/splash.png" aria-role="presentation">
-    <header>
+    <header id="navigation">
       <a id="skip-to-main" href="#main">skip to main</a>
-      <h1><a href="index.html">Yearnsmith</a></h1>
-      <nav>
+      <h1><a href="index.html">Yearn&shy;smith</a></h1>
+      <nav id="site-navigation">
+        <a href="#navigation" class="more-link">more</a>
+        <a href="#" class="less-link">less</a>
         <a href="index.html">home</a>
         <a href="about.html">about</a>
         <a href="projects.html">projects</a>
@@ -19,8 +20,8 @@
         <a class="current-page">contact</a>
       </nav>
     </header>
-
     <main id="main">
+      <h2>Contact</h2>
       <form name="contact" netlify>
 
         <label for="form-input-name" id="form-label-name">name:
@@ -39,7 +40,7 @@
           <textarea name="message" id="form-input-message" cols="30" rows="10" required>your message goes here :)</textarea>
         </label>
 
-      <input type="submit" value="send">
+      <input id="submit-contact" type="submit" value="send">
       </form>
     </main>
 
@@ -47,11 +48,11 @@
       <div class="copyright">&copy; 2020 Derick Yearnsmith</div>
       <div class="with-love">Hand coded with 💖 from my 🛋</div>
       <nav class="footer-nav">
-        <a class="current-page">home</a>
+        <a href="index.html">home</a>
         <a href="about.html">about</a>
         <a href="projects.html">projects</a>
         <a href="blog.html">blog</a>
-        <a href="contact.html">contact</a>
+        <a class="current-page">contact</a>
       </nav>
     </footer>
   </body>
