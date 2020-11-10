@@ -50,9 +50,11 @@ a:visited {
   width: -webkit-fit-content;
   width: fit-content;
   color: #002b36;
+  font-weight: bold;
   background-color: #268bd2;
   color: #002b36;
   font-weight: bold;
+  word-break: break-word;
 }
 
 h2, h3, h4, h5, h6 {
@@ -64,6 +66,7 @@ h2, h3, h4, h5, h6 {
   width: -webkit-fit-content;
   width: fit-content;
   color: #002b36;
+  font-weight: bold;
   padding-left: 2rem;
   line-height: 1;
 }
@@ -79,6 +82,7 @@ h1 a {
   width: -webkit-fit-content;
   width: fit-content;
   color: #002b36;
+  font-weight: bold;
   background: #268bd2;
   border: none;
 }
@@ -103,6 +107,7 @@ h3 {
   font-size: 2.5rem;
   margin: 1.1764em 0 .5882em;
   width: initial;
+  word-break: break-word;
 }
 
 h4 {
@@ -146,6 +151,23 @@ header nav a {
 
 footer {
   font-size: 1rem;
+  line-height: 1.5882;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding-bottom: .6486em;
+  background-color: #073642;
+  color: #93a1a1;
+}
+
+footer div {
+  margin: 0 0 .6486em;
+}
+
+footer div:first-child {
+  margin: .6486em 0;
 }
 
 footer a:link, footer a:visited {
@@ -154,9 +176,14 @@ footer a:link, footer a:visited {
 }
 
 footer a.current-page {
-  color: #93a1a1;
-  background: none;
-  border-bottom: 1px solid #93a1a1;
+  padding: 0;
+  background: #2aa198;
+  width: -moz-fit-content;
+  width: -webkit-fit-content;
+  width: fit-content;
+  color: #002b36;
+  font-weight: bold;
+  padding: .15em .25em;
 }
 
 #skip-to-main {
@@ -253,6 +280,96 @@ footer a.current-page {
   margin: 0 auto;
 }
 
+.header-img {
+  display: none;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.guest .author::after {
+  padding: 0;
+  background: #2aa198;
+  width: -moz-fit-content;
+  width: -webkit-fit-content;
+  width: fit-content;
+  color: #002b36;
+  font-weight: bold;
+  content: "Guest!";
+  margin-left: 1ch;
+}
+
+.guest h3::before {
+  content: "Guest Post: ";
+}
+
+.blog-post {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.blog-post .author {
+  margin: .75em 0;
+}
+
+.blog-post .author::before {
+  content: "Author: ";
+  font-weight: bold;
+}
+
+.blog-post .post-date {
+  margin: .75em 0;
+}
+
+.blog-post .post-date::before {
+  content: "Date Posted: ";
+  font-weight: bold;
+}
+
+.blog-post .content-img {
+  margin: 0;
+  padding: 0;
+  -ms-flex-negative: 2;
+      flex-shrink: 2;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-preferred-size: calc(100%/3);
+      flex-basis: calc(100%/3);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.blog-post .content-img img {
+  height: auto;
+  min-width: 150px;
+  width: 100%;
+  max-width: 275px;
+}
+
+/*Change this. It's not working*/
 header nav {
   margin: 0;
   padding: 0;

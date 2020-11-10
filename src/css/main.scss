@@ -48,8 +48,26 @@ $colour-link:$blue;
   width:-moz-fit-content;
   width:fit-content;
   color:$base03;
+  font-weight: bold;
 }
 
+//responsive image
+@mixin resposive-img(){
+  @include margin-padding();
+  flex-shrink:2;
+  flex-grow:1;
+  flex-basis:calc(100%/3);
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: space-around;
+  img{
+    height:auto;
+    min-width:150px;
+    width:100%;
+    max-width:275px;
+  }
+}
 /*reset*/
 html {
   @include margin-padding();
@@ -89,9 +107,10 @@ a:visited{
   background-color: $colour-link;
   color:$colour-bg;
   font-weight:bold;
+  word-break:break-word;
   &:link,&:visited{@extend .display-url;}
 }
-/// Headers //
+//// Headers ////
 h2,h3,h4,h5,h6{
   font-weight:700;
   font-family: 'Courier Prime';
@@ -108,11 +127,16 @@ h1{
   }
   a:visited{  color:$colour-bg; border:none;}
 }
-// Heading Sizing:
+//sizing
 /*line-height from: https://grtcalculator.com/, sizing rules from:http://webtypography.net*/ 
 h1{font-size:3rem;padding:0;}
 h2{  font-size:3rem; margin:1.4117em 0 .7058em; }
-h3{  font-size:2.5rem; margin:1.1764em 0 .5882em; width:initial; }
+h3{
+  font-size:2.5rem;
+  margin:1.1764em 0 .5882em;
+  width:initial;
+  word-break: break-word;
+}
 h4{  font-size:2rem; margin:.9411 0 .4705; }
 h5{  font-size:1.5rem;}
 h6{  font: italic 1.5rem bold;}
@@ -144,15 +168,26 @@ header nav{
 }
 footer{
   font-size:1rem;
+  line-height:1.5882;
+  align-items: center;
+  justify-content: space-around;
+  padding-bottom:.6486em;
+  background-color:$base02;
+  color:$base1;
+  div{
+    margin:0 0 .6486em;
+    &:first-child{
+      margin:.6486em 0;
+    }
+  }
   a{
     &:link,&:visited{
       color:$base1;
       border:none;
     }
     &.current-page{
-    color:$base1;
-    background:none;
-    border-bottom:1px solid $base1;
+    @include highlight-text();
+    padding:.15em .25em;
     }
   }
 }
@@ -184,30 +219,61 @@ footer{
     }
   }
   .sml-box{
-    @include margin-padding();
-    flex-shrink:2;
-    flex-grow:1;
-    flex-basis:calc(100%/3);
-    display:flex;
-    flex-direction:column;
-    align-items: center;
-    justify-content: space-around;
-    img{
-      height:auto;
-      min-width:150px;
-      width:100%;
-      max-width:275px;
-    }
+   @include resposive-img();
   }
   h4{  @include margin-padding(); }
   #tldr{  border:.25em solid $cyan; }
   #resume{  background: $cyan; padding-bottom:1em; }
 }
+
 .full-width-content{
   width:90vw;
   margin:0 auto;
 }
-//Mobile-first Menu
+
+.header-img{
+  display:none;
+}
+
+footer{
+  display:flex;
+  flex-direction: column;
+}
+/// Blogs!
+.guest{
+  .author::after{
+    @include highlight-text();
+    content:"Guest!";
+    margin-left:1ch;
+  }
+  h3::before{
+    content:"Guest Post: "
+  }
+}
+.blog-post{
+  display: flex;
+  flex-direction: column;
+  .author{
+    margin:.75em 0;
+    &::before{
+      content:"Author: ";
+      font-weight:bold;
+    }
+  }
+  .post-date{
+    margin:.75em 0;
+    &::before{
+      content:"Date Posted: ";
+      font-weight:bold;
+    }
+  }
+  .content-img{
+    @include resposive-img();
+}
+}
+
+/////Mobile-first Menu
+/*Change this. It's not working*/
 header nav{
   @include margin-padding();
   display:flex;
