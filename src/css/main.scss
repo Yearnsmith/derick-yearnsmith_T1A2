@@ -272,6 +272,43 @@ footer{
 }
 }
 
+//Form
+form{
+  max-width:90vw;
+  text-transform: capitalize;
+  @extend p;
+  // margin-top:1.7em;
+  display:flex;
+  flex-direction: column;
+
+  input{
+    height:1.7em;
+    padding:0 .5ch;
+    font:400 1.25rem/1.7 'Anonymous Pro','Courier New', Courier, Monospace;
+    background:$base02;
+    color:$base1;
+    border:.15em solid $cyan;
+    &#submit-contact{
+      background:$cyan;
+      color:$colour-bg;
+      font-weight:bold;
+      margin-top:1.7em;
+    }
+  }
+  label{
+    display:flex;
+    flex-direction: column;
+    margin-top:.85em;
+    
+    textarea{
+      @extend input;
+      height:8.5em;
+      // height:170px;
+    }
+  }
+
+}
+
 /////Mobile-first Menu
 /*Change this. It's not working*/
 header nav{
