@@ -1,0 +1,37 @@
+@import "variables";
+/////////// @mixins /////////
+@mixin margin-padding{
+  margin:0;
+  padding:0;
+}
+@mixin highlight-text {
+  padding:0;
+  background:$cyan;
+  width:-moz-fit-content;
+  width:fit-content;
+  color:$base03;
+  font-weight: bold;
+}
+@mixin error-text{
+  background-color:$red;
+  color:$base03;
+  font-weight:bold;
+  padding:.15em;
+}
+//responsive image
+@mixin resposive-img(){
+  @include margin-padding();
+  flex-shrink:2;
+  flex-grow:1;
+  flex-basis:calc(100%/3);
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: space-around;
+  img{
+    height:auto;
+    min-width:150px;
+    width:100%;
+    max-width:275px;
+  }
+}

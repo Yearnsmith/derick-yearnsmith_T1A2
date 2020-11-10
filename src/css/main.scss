@@ -1,78 +1,12 @@
+
+@import "partials/media-queries";
+
+
 @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-//Vars
-// Colours from Solarized (ethanschoonover.com/solarized)
-/*notes on usage:
-Dark colorscheme: bg & body => base03:base0 (not base00)
-highlighted bg & body => base02:base1.
->> The L*a*b lightness difference between base03:base0
-   and base02:base1 is identical by design, resulting
-   in identical readability against both normal and
-   highlighted backgrounds.*/
 
-//color value      //  DARK            LIGHT
-//-----------------//--------------//-----------------
-$base03:#002b36; // background   // nil
-$base02:#073642; // bg hilight   // nil
-$base01:#586e75; // 2ndy content // em content
-$base00:#657b83; // nil          // body text
-$base0:#839496;  // body text    // nil
-$base1:#93a1a1;  // em content   // 2ndy content
-$base2:#eee8d5;  // nil          // bg hilight
-$base3:#fdf6e3;  // nil          // background
-//highlights
-$yellow:#b58900;
-$orange:#cb4b16;
-$red:#dc322f;
-$magenta:#d33682;
-$violet:#6c71c4;
-$blue:#268bd2;
-$cyan:#2aa198;
-$green:#859900; //I may modify this one...
 
-// Page Colours
-$colour-bg:$base03;
-$colour-cursor-start: $colour-bg;
-$colour-cursor: $cyan;
-$colour-text: $base0;
-$colour-link:$blue;
 
-/////////// @mixins /////////
-@mixin margin-padding{
-  margin:0;
-  padding:0;
-}
-@mixin highlight-text {
-  padding:0;
-  background:$cyan;
-  width:-moz-fit-content;
-  width:fit-content;
-  color:$base03;
-  font-weight: bold;
-}
-@mixin error-text{
-  background-color:$red;
-  color:$base03;
-  font-weight:bold;
-  padding:.15em;
-}
-//responsive image
-@mixin resposive-img(){
-  @include margin-padding();
-  flex-shrink:2;
-  flex-grow:1;
-  flex-basis:calc(100%/3);
-  display:flex;
-  flex-direction:column;
-  align-items: center;
-  justify-content: space-around;
-  img{
-    height:auto;
-    min-width:150px;
-    width:100%;
-    max-width:275px;
-  }
-}
 /*reset*/
 html {
   @include margin-padding();
@@ -431,14 +365,27 @@ header nav{
 }
 
 //index.html specific
+#index-container{
+  @include margin-padding();
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height:100vh;
+  overflow: hidden;
+}
+
+main.index-page{
+  max-width: width 90vw;
+  align-self:center;
+}
+
 .intro-box {
-  padding:0;
-  margin:0;
+  @include margin-padding();
   display:grid;
   grid-template-columns:repeat(10, 1ch);
   grid-template-rows:repeat(5,1em);
   line-height: 1;
-  font-size:4rem;
+  font-size:3rem;
 }
 
 .intro-text{

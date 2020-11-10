@@ -1,0 +1,83 @@
+@import "mixins";
+
+.wall{
+  width:10ch;
+  height:1em;
+  grid-column-start:1;
+  
+  position:relative;
+  display:grid;
+  grid-template-columns:1.1ch 9ch;
+  grid-template-rows:1em;
+  animation: steps(10) 2.5s forwards type;
+}
+.cursor{
+  background-color:$colour-cursor-start;
+  opacity:1;
+  grid-column-end:2;
+  animation: 2.5s forwards cursor;
+  mix-blend-mode:exclusion;
+}
+.blind{background:$colour-bg;}
+
+@keyframes type-first-line{
+  from{left:0;opacity:1;}
+  99%{opacity:1;}
+  to{left:4ch; opacity:0;}
+}
+
+@keyframes type{
+  from{left:0; opacity:1;}
+  99%{opacity:1;}
+  to{left:10ch; opacity:0;}
+}
+
+@keyframes type-last-line{
+  from{left:0; opacity:1}
+  to{left:10ch;}
+}
+/* @keyframes cursor-blend{
+  from{background:$colour-cursor;mix-blend-mode:initial;}
+  to{background:$colour-cursor;mix-blend-mode:exclusion;}
+} */
+@keyframes cursor{
+  0%{
+    opacity:1;
+    background:$colour-cursor;
+  }
+  99%{
+    opacity:1;
+    background:$colour-cursor;
+  }
+  100%{opacity:0;}
+}
+@keyframes cursor-blink{
+  from{opacity:0;}
+  50%{opacity:1; background:$colour-cursor;}
+  to{opacity:0;}
+}
+.line1{
+  grid-row-start:1;
+  animation: steps(4) .75s forwards type-first-line;
+  .cursor{animation:.75s forwards cursor;}
+}
+.line2{
+  grid-row-start:2;
+  animation-delay:.75s;
+  .cursor{animation-delay:.75s;}
+}
+.line3{
+  grid-row-start:3;
+  animation-delay:3.25s;
+  .cursor{animation-delay:3.25s;}
+}
+.line4{
+  grid-row-start:4;
+  animation-delay:5.75s;
+  .cursor{animation-delay:5.75s;}
+}
+.line5{
+  grid-row-start:5;
+  animation: steps(10) 2.5s forwards 8.25s type-last-line;
+  .cursor{animation:2.5s forwards 8.25s cursor, 1s 2.5 forwards 10.5s cursor-blink;}
+}
