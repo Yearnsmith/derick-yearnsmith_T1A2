@@ -1,5 +1,5 @@
 
-@import "partials/media-queries";
+@import "partials/index-animation";
 
 
 @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
@@ -68,8 +68,8 @@ h1{
 }
 //sizing
 /*line-height from: https://grtcalculator.com/, sizing rules from:http://webtypography.net*/ 
-h1{font-size:3rem;padding:0;}
-h2{  font-size:3rem; margin:1.4117em 0 .7058em; }
+h1{font-size:3rem;padding:0; margin-bottom:.7058em;}
+h2{  font-size:3rem; margin:1.25rem 0 .7058em; }
 h3{
   font-size:2.5rem;
   margin:1.1764em 0 .5882em;
@@ -143,6 +143,9 @@ footer{
 
 /////// Layout /////////
 /*This is in order of specificity — with less specific first*/
+header{
+ padding-bottom:calc((16px*3)*.7058);
+}
 .two-column-flex{
   @include margin-padding();
   display:flex;
@@ -327,7 +330,7 @@ header nav{
     .more-link{  display:none; }
     .less-link{
       display: initial;
-      &:after{
+      &::after{
         content:"\25b2";
         font-weight:bold;
         position:absolute;
@@ -396,3 +399,5 @@ main.index-page{
   padding:0;
   margin:0;
 }
+
+@import 'partials/media-queries';

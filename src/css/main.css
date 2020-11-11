@@ -216,11 +216,12 @@ h1 a:visited {
 h1 {
   font-size: 3rem;
   padding: 0;
+  margin-bottom: 0.7058em;
 }
 
 h2 {
   font-size: 3rem;
-  margin: 1.4117em 0 0.7058em;
+  margin: 1.25rem 0 0.7058em;
 }
 
 h3 {
@@ -309,6 +310,10 @@ footer a.current-page {
 }
 
 /*This is in order of specificity — with less specific first*/
+header {
+  padding-bottom: calc((16px*3)*.7058);
+}
+
 .two-column-flex {
   margin: 0;
   padding: 0;
@@ -539,7 +544,7 @@ header nav .current-page {
 #navigation:target nav .less-link {
   display: initial;
 }
-#navigation:target nav .less-link:after {
+#navigation:target nav .less-link::after {
   content: "▲";
   font-weight: bold;
   position: absolute;
@@ -604,6 +609,38 @@ main.index-page {
   grid-row-end: 6;
   padding: 0;
   margin: 0;
+}
+
+@media screen and (min-width: 530px) {
+  header nav {
+    flex-flow: row wrap;
+    height: unset;
+    min-width: fit-content;
+    max-width: 50vw;
+    justify-content: space-between;
+  }
+  header nav .more-link, header nav .more-link:link, header nav .more-link:visited {
+    display: none;
+  }
+  header nav a {
+    margin: 0 1ch 0 0;
+  }
+  header nav a:link {
+    border: none;
+    background: #268bd2;
+    color: #002b36;
+  }
+  header nav a:visited {
+    border: none;
+    background: #268bd2;
+    color: #002b36;
+  }
+  header nav a:link:last-child {
+    border: none;
+  }
+  header nav a:visited:last-child {
+    border: none;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
