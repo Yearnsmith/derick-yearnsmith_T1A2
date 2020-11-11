@@ -4,6 +4,7 @@ $breakpoint-tablet: 530px;
 $breakpoint-desktop: 900px;
 
 @media screen and (min-width: $breakpoint-tablet){
+  //header
   header{
     nav{
       flex-flow:row wrap;
@@ -28,5 +29,38 @@ $breakpoint-desktop: 900px;
         &:visited:last-child{border:none;}
       }
     }
+  }  
+  //text-sizing
+  h2{  font-size:3rem; margin:1.25rem 0 .6666em; }
+  h3{
+    font-size:2.5rem;
+    margin:1.1764em 0 .5882em;
+    width:initial;
+    word-break: break-word;
+  }
+  h4{  font-size:2rem; margin:.6249em 0 .2083em; }
+  h5{  font-size:1.5rem;}
+  h6{  font: italic 1.5rem bold;}
+
+  p,li{
+    font-size:1.125rem;
+    line-height: 1.6666;
+    margin:1.6666em auto;
+  }
+  
+  ul{
+    margin:1.6666em auto;
+    padding-left:3ch;
+    li{ 
+      margin:.2083em 0 0 1ch;
+      ul{
+        margin:0 0 .8333em;
+        padding-left: 2ch;
+      }
+    }
+  }
+  .full-width-content:not(.two-column-flex){
+    width: 70vw;
+    margin:0 4ch 0 auto;
   }
 }

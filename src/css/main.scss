@@ -76,7 +76,7 @@ h3{
   width:initial;
   word-break: break-word;
 }
-h4{  font-size:2rem; margin:.9411 0 .4705; }
+h4{  font-size:2rem; margin:.9411em 0 .4705em; }
 h5{  font-size:1.5rem;}
 h6{  font: italic 1.5rem bold;}
 
@@ -93,9 +93,16 @@ p,li{
 }
 
 ul{
-  margin:1.5em auto;
-  padding-left:6ch;
-  li{margin:.25rem 0 0 1ch;}
+  margin:.85em auto;
+  padding-left:2ch;
+  li{ 
+    margin:.4253em 0 0 1ch;
+    ul{
+      margin:0 0 .4253em;
+      padding-left: 0;
+      li:first-child{margin-top:0;}
+    }
+  }
 }
 
 header nav{
@@ -144,7 +151,8 @@ footer{
 /////// Layout /////////
 /*This is in order of specificity — with less specific first*/
 header{
- padding-bottom:calc((16px*3)*.7058);
+ padding-bottom:.7083em;
+ margin-bottom:1.4166em;
 }
 .two-column-flex{
   @include margin-padding();

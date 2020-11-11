@@ -233,7 +233,7 @@ h3 {
 
 h4 {
   font-size: 2rem;
-  margin: 0.9411 0 0.4705;
+  margin: 0.9411em 0 0.4705em;
 }
 
 h5 {
@@ -257,11 +257,18 @@ p, form, li {
 }
 
 ul {
-  margin: 1.5em auto;
-  padding-left: 6ch;
+  margin: 0.85em auto;
+  padding-left: 2ch;
 }
 ul li {
-  margin: 0.25rem 0 0 1ch;
+  margin: 0.4253em 0 0 1ch;
+}
+ul li ul {
+  margin: 0 0 0.4253em;
+  padding-left: 0;
+}
+ul li ul li:first-child {
+  margin-top: 0;
 }
 
 header nav a {
@@ -311,7 +318,8 @@ footer a.current-page {
 
 /*This is in order of specificity — with less specific first*/
 header {
-  padding-bottom: calc((16px*3)*.7058);
+  padding-bottom: 0.7083em;
+  margin-bottom: 1.4166em;
 }
 
 .two-column-flex {
@@ -640,6 +648,54 @@ main.index-page {
   }
   header nav a:visited:last-child {
     border: none;
+  }
+
+  h2 {
+    font-size: 3rem;
+    margin: 1.25rem 0 0.6666em;
+  }
+
+  h3 {
+    font-size: 2.5rem;
+    margin: 1.1764em 0 0.5882em;
+    width: initial;
+    word-break: break-word;
+  }
+
+  h4 {
+    font-size: 2rem;
+    margin: 0.6249em 0 0.2083em;
+  }
+
+  h5 {
+    font-size: 1.5rem;
+  }
+
+  h6 {
+    font: italic 1.5rem bold;
+  }
+
+  p, form, li {
+    font-size: 1.125rem;
+    line-height: 1.6666;
+    margin: 1.6666em auto;
+  }
+
+  ul {
+    margin: 1.6666em auto;
+    padding-left: 3ch;
+  }
+  ul li {
+    margin: 0.2083em 0 0 1ch;
+  }
+  ul li ul {
+    margin: 0 0 0.8333em;
+    padding-left: 2ch;
+  }
+
+  .full-width-content:not(.two-column-flex) {
+    width: 70vw;
+    margin: 0 4ch 0 auto;
   }
 }
 
