@@ -12,7 +12,6 @@ html {
   @include margin-padding();
   font-size: 16px;
   font-weight: normal;
-  // line-height: 1.25;
   font-family: 'Anonymous Pro', monospace;
   box-sizing: border-box;
   min-height:100vh;
@@ -20,12 +19,11 @@ html {
 body{
 @include margin-padding();
   font-size: 1em;
-  color:#bbb;
+  color:$base0;
   background:$colour-bg;
   // min-width:100vw;
 }
 
-// div,p,header,main,ul,li{border:1px solid black}
 ////// Typography///////////
 ///links///
 a:link{
@@ -375,40 +373,6 @@ header nav{
     border-top:.75em solid $yellow;
     z-index: 1000;
   }
-}
-
-//index.html specific
-#index-container{
-  @include margin-padding();
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height:100vh;
-  overflow: hidden;
-}
-
-main.index-page{
-  max-width: width 90vw;
-  align-self:center;
-}
-
-.intro-box {
-  @include margin-padding();
-  display:grid;
-  grid-template-columns:repeat(10, 1ch);
-  grid-template-rows:repeat(5,1em);
-  line-height: 1;
-  font-size:3rem;
-}
-
-.intro-text{
-  grid-column-start: 1;
-  grid-column-end: 11;
-  grid-row-start: 1;
-  grid-row-end:6;
-  padding:0;
-  margin:0;
-  color:$colour-bg; //Hide text while font loads!
 }
 
 @import 'partials/media-queries';

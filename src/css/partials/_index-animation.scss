@@ -1,5 +1,39 @@
 @import "mixins";
 
+//index.html specific
+#index-container{
+  @include margin-padding();
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height:100vh;
+  overflow: hidden;
+}
+
+main.index-page{
+  align-self:center;
+  max-width: 90vw;
+}
+
+.intro-box {
+  @include margin-padding();
+  display:grid;
+  grid-template-columns:repeat(10, 1ch);
+  grid-template-rows:repeat(5,1em);
+  line-height: 1;
+  font-size:3rem;
+}
+
+.intro-text{
+  color:$colour-bg; //Hide text while font loads!
+  // @include intro-text();
+  grid-column: 1/11;
+  grid-row: 1/6;
+  min-width:10ch;
+  font-size:3rem;
+  line-height: 1;
+}
+
 .wall{
   width:10ch;
   height:1em;
@@ -21,8 +55,12 @@
 }
 .blind{background:$colour-bg;}
 
-//Re-colour text
-@keyframes recolour-text{
+.intro-text{
+  animation:.01s 1s forwards colour-text;
+}
+
+// Re-colour text
+@keyframes colour-text{
   from{color:$colour-bg;}
   to{color:$base0;}
 }
@@ -65,26 +103,26 @@
 }
 .line1{
   grid-row-start:1;
-  animation: steps(4) .75s forwards type-first-line;
-  .cursor{animation:.75s forwards cursor;}
+  animation: .74s steps(4) 2s forwards type-first-line;
+  .cursor{animation:.75s 2s forwards cursor;}
 }
 .line2{
   grid-row-start:2;
-  animation-delay:.75s;
-  .cursor{animation-delay:.75s;}
+  animation-delay:2.75s;
+  .cursor{animation-delay:2.75s;}
 }
 .line3{
   grid-row-start:3;
-  animation-delay:3.25s;
-  .cursor{animation-delay:3.25s;}
+  animation-delay:5.25s;
+  .cursor{animation-delay:5.25s;}
 }
 .line4{
   grid-row-start:4;
-  animation-delay:5.75s;
-  .cursor{animation-delay:5.75s;}
+  animation-delay:7.75s;
+  .cursor{animation-delay:7.75s;}
 }
 .line5{
   grid-row-start:5;
-  animation: steps(10) 2.5s forwards 8.25s type-last-line;
-  .cursor{animation:2.5s forwards 8.25s cursor, 1s 2.5 forwards 10.5s cursor-blink;}
+  animation: steps(10) 2.5s forwards 10.25s type-last-line;
+  .cursor{animation:2.5s forwards 10.25s cursor, 1s 2.5 forwards 13s cursor-blink;}
 }
