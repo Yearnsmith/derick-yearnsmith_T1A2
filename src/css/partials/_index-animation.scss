@@ -10,6 +10,7 @@
   grid-template-columns:1.1ch 9ch;
   grid-template-rows:1em;
   animation: steps(10) 2.5s forwards type;
+  margin-left:-.1ch;
 }
 .cursor{
   background-color:$colour-cursor-start;
@@ -19,6 +20,12 @@
   mix-blend-mode:exclusion;
 }
 .blind{background:$colour-bg;}
+
+//Re-colour text
+@keyframes recolour-text{
+  from{color:$colour-bg;}
+  to{color:$base0;}
+}
 
 @keyframes type-first-line{
   from{left:0;opacity:1;}

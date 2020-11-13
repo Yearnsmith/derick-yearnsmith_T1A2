@@ -6,7 +6,6 @@ highlighted bg & body => base02:base1.
    and base02:base1 is identical by design, resulting
    in identical readability against both normal and
    highlighted backgrounds.*/
-@import url("https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 .wall {
   width: 10ch;
   height: 1em;
@@ -16,6 +15,7 @@ highlighted bg & body => base02:base1.
   grid-template-columns: 1.1ch 9ch;
   grid-template-rows: 1em;
   animation: steps(10) 2.5s forwards type;
+  margin-left: -0.1ch;
 }
 
 .cursor {
@@ -140,7 +140,7 @@ html {
   padding: 0;
   font-size: 16px;
   font-weight: normal;
-  font-family: "Anonymous Pro", "Courier New", Courier, monospace;
+  font-family: "Anonymous Pro", monospace;
   box-sizing: border-box;
   min-height: 100vh;
 }
@@ -249,7 +249,7 @@ p, form, ul, li {
   padding: 0;
 }
 
-p, form, li {
+p, form, ul {
   font-size: 1.25rem;
   line-height: 1.7;
   margin: 1.7em auto;
@@ -620,6 +620,7 @@ main.index-page {
   grid-row-end: 6;
   padding: 0;
   margin: 0;
+  color: #002b36;
 }
 
 @media screen and (min-width: 530px) {
@@ -678,7 +679,7 @@ main.index-page {
     font: italic 1.5rem bold;
   }
 
-  p, form, li {
+  p, form, ul {
     font-size: 1.125rem;
     line-height: 1.6666;
     margin: 1.6666em auto;
@@ -696,7 +697,7 @@ main.index-page {
     padding-left: 2ch;
   }
 
-  .full-width-content:not(.two-column-flex) {
+  .full-width-content {
     width: 70vw;
     margin: 0 4ch 0 auto;
   }
@@ -732,7 +733,7 @@ main.index-page {
     grid-template-columns: repeat(12, 1fr);
   }
   .blog-post .post-header .header-img {
-    grid-row: 1/6;
+    grid-row: 1/5;
     grid-column: 1/13;
     display: grid;
     grid-template-rows: 90% 1fr;
@@ -775,7 +776,7 @@ main.index-page {
     grid-column: 2/3;
     writing-mode: vertical-lr;
     text-orientation: sideways;
-    width: fit-content;
+    width: 4ch;
   }
   .blog-post .post-header h3 {
     grid-row: 1/2;
@@ -791,7 +792,7 @@ main.index-page {
     grid-column: 1/4;
   }
   .blog-post .post-header .post-date {
-    grid-row: 5/6;
+    grid-row: 4/5;
     grid-column: 11/13;
   }
   .blog-post .content-img {
@@ -802,6 +803,52 @@ main.index-page {
     height: 100%;
     max-width: 100%;
     object-fit: contain;
+  }
+}
+@media screen and (min-width: 900px) {
+  #site-navigation {
+    position: absolute;
+    top: 1em;
+    right: 2ch;
+    background-color: #268bd2;
+    padding: 0.15em;
+  }
+  #site-navigation a:link, #site-navigation a:visited, #site-navigation a.current-link {
+    background-color: transparent;
+    margin: 0;
+    padding: 0.25em;
+  }
+  #site-navigation a:hover {
+    background-color: #073642;
+    color: #268bd2;
+  }
+  #site-navigation a.current-page {
+    display: unset;
+    background-color: #002b36;
+    color: #268bd2;
+    border: none;
+    margin: 0;
+    padding: 0;
+    padding: 0.25em;
+  }
+
+  .full-width-content {
+    margin: 0 auto;
+  }
+  .full-width-content ~ h4 {
+    max-width: 70vw;
+  }
+
+  form {
+    display: grid;
+    flex-flow: row nowrap;
+  }
+  form label {
+    display: grid;
+    height: fit-content;
+  }
+  form #form-label-email::before {
+    content: ".";
   }
 }
 

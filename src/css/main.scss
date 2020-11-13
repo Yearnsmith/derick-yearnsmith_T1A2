@@ -2,7 +2,7 @@
 @import "partials/index-animation";
 
 
-@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 
 
@@ -13,7 +13,7 @@ html {
   font-size: 16px;
   font-weight: normal;
   // line-height: 1.25;
-  font-family: 'Anonymous Pro','Courier New', Courier, monospace;
+  font-family: 'Anonymous Pro', monospace;
   box-sizing: border-box;
   min-height:100vh;
 }
@@ -85,7 +85,7 @@ p,ul,li{
 @include margin-padding();
 }
 
-p,li{
+p,ul{
   font-size:1.25rem;
   line-height: 1.7;
   margin:1.7em auto;
@@ -408,6 +408,7 @@ main.index-page{
   grid-row-end:6;
   padding:0;
   margin:0;
+  color:$colour-bg; //Hide text while font loads!
 }
 
 @import 'partials/media-queries';
