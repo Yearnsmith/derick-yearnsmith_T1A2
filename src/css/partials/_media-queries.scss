@@ -42,7 +42,7 @@ $breakpoint-desktop: 900px;
   h5{  font-size:1.5rem;}
   h6{  font: italic 1.5rem bold;}
 
-  p,li{
+  p,ul{
     font-size:1.125rem;
     line-height: 1.6666;
     margin:1.6666em auto;
@@ -59,7 +59,7 @@ $breakpoint-desktop: 900px;
       }
     }
   }
-  .full-width-content:not(.two-column-flex){
+  .full-width-content{
     width: 70vw;
     margin:0 4ch 0 auto;
   }
@@ -99,7 +99,6 @@ $breakpoint-desktop: 900px;
         grid-template-rows:90% 1fr;
         grid-template-columns: 1fr 7.5%;
         width:100%;
-        // height:16rem;
         margin:0 auto;
         img{
           grid-row: 1/3;
@@ -129,7 +128,7 @@ $breakpoint-desktop: 900px;
               grid-column:2/3;
               writing-mode:vertical-lr;
               text-orientation: sideways;
-              width:fit-content;
+              width:4ch;
 
             }
             margin:0;
@@ -155,7 +154,7 @@ $breakpoint-desktop: 900px;
         grid-column:1/4;
       }
       .post-date{
-        grid-row: 5/6;
+        grid-row: 4/5;
         grid-column:11/13;
       }
     }
@@ -170,6 +169,57 @@ $breakpoint-desktop: 900px;
     }
   }
 
+}//end media query Tabllet
 
+@media screen and (min-width:$breakpoint-desktop){
+  #site-navigation{
+    position:absolute;
+    top:1em;
+    right:2ch;
+    background-color:$blue;
+    padding:.15em;
+    a{
+      &:link,&:visited,&.current-link{
+        background-color:transparent;
+        margin:0;
+        padding:.25em;
+      }
+      &:hover{
+        background-color:$base02;
+        color:$blue;
+      }
+      &.current-page{
+        display: unset;
+        background-color:$colour-bg;
+        color:$colour-link;
+        border:none;
+        @include margin-padding;
+        padding:.25em;
+      }
+    }
+  }
+    
+  .full-width-content{
+    margin:0 auto;
+    &~h4{
+      max-width:70vw;
+    }
+  }
+  
 
-}//end media query
+  form{
+    display:grid;
+    label{
+      display:grid;
+      height:fit-content;
+    }
+    flex-flow: row nowrap;
+    #form-label-email{
+      // margin-left:2ch;
+      &::before{
+      content:".";
+      }
+    }
+  }
+
+}
