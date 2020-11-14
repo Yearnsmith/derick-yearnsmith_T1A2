@@ -6,6 +6,40 @@ highlighted bg & body => base02:base1.
    and base02:base1 is identical by design, resulting
    in identical readability against both normal and
    highlighted backgrounds.*/
+#index-container {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+main.index-page {
+  align-self: center;
+  max-width: 90vw;
+}
+
+.intro-box {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(10, 1ch);
+  grid-template-rows: repeat(5, 1em);
+  line-height: 1;
+  font-size: 3rem;
+}
+
+.intro-text {
+  color: #002b36;
+  grid-column: 1/11;
+  grid-row: 1/6;
+  min-width: 10ch;
+  font-size: 3rem;
+  line-height: 1;
+}
+
 .wall {
   width: 10ch;
   height: 1em;
@@ -30,6 +64,18 @@ highlighted bg & body => base02:base1.
   background: #002b36;
 }
 
+.intro-text {
+  animation: 0.01s 1s forwards colour-text;
+}
+
+@keyframes colour-text {
+  from {
+    color: #002b36;
+  }
+  to {
+    color: #839496;
+  }
+}
 @keyframes type-first-line {
   from {
     left: 0;
@@ -96,42 +142,42 @@ highlighted bg & body => base02:base1.
 }
 .line1 {
   grid-row-start: 1;
-  animation: steps(4) 0.75s forwards type-first-line;
+  animation: 0.74s steps(4) 2s forwards type-first-line;
 }
 .line1 .cursor {
-  animation: 0.75s forwards cursor;
+  animation: 0.75s 2s forwards cursor;
 }
 
 .line2 {
   grid-row-start: 2;
-  animation-delay: 0.75s;
+  animation-delay: 2.75s;
 }
 .line2 .cursor {
-  animation-delay: 0.75s;
+  animation-delay: 2.75s;
 }
 
 .line3 {
   grid-row-start: 3;
-  animation-delay: 3.25s;
+  animation-delay: 5.25s;
 }
 .line3 .cursor {
-  animation-delay: 3.25s;
+  animation-delay: 5.25s;
 }
 
 .line4 {
   grid-row-start: 4;
-  animation-delay: 5.75s;
+  animation-delay: 7.75s;
 }
 .line4 .cursor {
-  animation-delay: 5.75s;
+  animation-delay: 7.75s;
 }
 
 .line5 {
   grid-row-start: 5;
-  animation: steps(10) 2.5s forwards 8.25s type-last-line;
+  animation: steps(10) 2.5s forwards 10.25s type-last-line;
 }
 .line5 .cursor {
-  animation: 2.5s forwards 8.25s cursor, 1s 2.5 forwards 10.5s cursor-blink;
+  animation: 2.5s forwards 10.25s cursor, 1s 2.5 forwards 13s cursor-blink;
 }
 
 /*reset*/
@@ -149,7 +195,7 @@ body {
   margin: 0;
   padding: 0;
   font-size: 1em;
-  color: #bbb;
+  color: #839496;
   background: #002b36;
 }
 
@@ -588,46 +634,12 @@ header nav .current-page {
   z-index: 1000;
 }
 
-#index-container {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 100vh;
-  overflow: hidden;
-}
-
-main.index-page {
-  max-width: width 90vw;
-  align-self: center;
-}
-
-.intro-box {
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(10, 1ch);
-  grid-template-rows: repeat(5, 1em);
-  line-height: 1;
-  font-size: 3rem;
-}
-
-.intro-text {
-  grid-column-start: 1;
-  grid-column-end: 11;
-  grid-row-start: 1;
-  grid-row-end: 6;
-  padding: 0;
-  margin: 0;
-  color: #002b36;
-}
-
 @media screen and (min-width: 530px) {
   header nav {
     flex-flow: row wrap;
     height: unset;
     min-width: fit-content;
+    min-width: -moz-fit-content;
     max-width: 50vw;
     justify-content: space-between;
   }
@@ -652,6 +664,18 @@ main.index-page {
   }
   header nav a:visited:last-child {
     border: none;
+  }
+
+  h1::before {
+    padding: 0;
+    background: #2aa198;
+    width: -moz-fit-content;
+    width: fit-content;
+    color: #002b36;
+    font-weight: bold;
+    content: "@";
+    background: #268bd2;
+    padding-left: 1ch;
   }
 
   h2 {
@@ -806,30 +830,42 @@ main.index-page {
   }
 }
 @media screen and (min-width: 900px) {
+  h2 {
+    width: 60vw;
+    line-height: 1.25em;
+  }
+
+  h3 {
+    min-width: 45vw;
+    max-width: 50vw;
+  }
+
   #site-navigation {
     position: absolute;
-    top: 1em;
-    right: 2ch;
+    top: 3em;
+    right: 0ch;
     background-color: #268bd2;
-    padding: 0.15em;
+    padding-right: 2ch;
   }
-  #site-navigation a:link, #site-navigation a:visited, #site-navigation a.current-link {
-    background-color: transparent;
+  #site-navigation a:link, #site-navigation a:visited, #site-navigation a.current-page {
     margin: 0;
-    padding: 0.25em;
+    padding: 0.25em 1ch;
   }
-  #site-navigation a:hover {
-    background-color: #073642;
-    color: #268bd2;
+  #site-navigation a:link:first-child, #site-navigation a:visited:first-child, #site-navigation a.current-page:first-child {
+    padding-left: 0;
+  }
+  #site-navigation a:link:last-child, #site-navigation a:visited:last-child, #site-navigation a.current-page:last-child {
+    padding-right: 0;
   }
   #site-navigation a.current-page {
     display: unset;
-    background-color: #002b36;
-    color: #268bd2;
-    border: none;
-    margin: 0;
-    padding: 0;
-    padding: 0.25em;
+    background-color: #073642;
+    color: #93a1a1;
+    text-decoration: underline;
+  }
+  #site-navigation a:hover {
+    background-color: #073642;
+    color: #93a1a1;
   }
 
   .full-width-content {

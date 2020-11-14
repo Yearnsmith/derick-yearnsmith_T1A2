@@ -10,6 +10,7 @@ $breakpoint-desktop: 900px;
       flex-flow:row wrap;
       height:unset;
       min-width:fit-content;
+      min-width:-moz-fit-content;
       max-width:50vw;
       justify-content: space-between;    
       .more-link{  display:none;}
@@ -30,6 +31,17 @@ $breakpoint-desktop: 900px;
       }
     }
   }  
+  //Make h1 Visually appealing
+  h1{
+    //add decorative "@" to h1
+    &::before{
+      @include highlight-text;
+      content:"@";
+      background:$colour-link;
+      padding-left:1ch;
+    }
+  }
+
   //text-sizing
   h2{  font-size:3rem; margin:1.25rem 0 .6666em; }
   h3{
@@ -172,29 +184,44 @@ $breakpoint-desktop: 900px;
 }//end media query Tabllet
 
 @media screen and (min-width:$breakpoint-desktop){
+
+  //extend h2 for better visual heirachy.
+  h2{
+    width:60vw;
+    line-height:1.25em;
+  }
+  h3{
+    min-width:45vw; //Ideal width
+    max-width:50vw; //Just in case of a long h2
+  }
+
   #site-navigation{
     position:absolute;
-    top:1em;
-    right:2ch;
+    top:3em;
+    right:0ch;
     background-color:$blue;
-    padding:.15em;
+    padding-right:2ch;
     a{
-      &:link,&:visited,&.current-link{
-        background-color:transparent;
+      &:link,&:visited,&.current-page{
+        // background-color:transparent;
         margin:0;
-        padding:.25em;
-      }
-      &:hover{
-        background-color:$base02;
-        color:$blue;
+        padding:.25em 1ch;
+        &:first-child{
+          padding-left:0;
+        }
+        &:last-child{
+          padding-right:0;
+        }
       }
       &.current-page{
         display: unset;
-        background-color:$colour-bg;
-        color:$colour-link;
-        border:none;
-        @include margin-padding;
-        padding:.25em;
+        background-color:$base02;
+        color:$base1;
+        text-decoration:underline;
+      }
+      &:hover{
+        background-color:$base02;
+        color:$base1;
       }
     }
   }
@@ -206,6 +233,7 @@ $breakpoint-desktop: 900px;
     }
   }
   
+
 
   form{
     display:grid;
