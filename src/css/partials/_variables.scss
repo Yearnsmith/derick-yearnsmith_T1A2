@@ -26,10 +26,13 @@ $magenta:#d33682;
 $violet:#6c71c4;
 $blue:#268bd2;
 $cyan:#2aa198;
-$green:#859900; //I may modify this one...
+$cyan-t:#2aa198ea;//semi-transparent
+$green:#859900;
+$base03-t:#002b36cc;//translucent
 
 // Page Colours
 $colour-bg:$base03;
+$colour-bg-transp:#002b36df;
 $colour-cursor-start: $colour-bg;
 $colour-cursor: $cyan;
 $colour-text: $base0;
