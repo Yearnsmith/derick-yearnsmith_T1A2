@@ -193,10 +193,10 @@ $breakpoint-desktop: 900px;
       width:100%;
       img{
         height:100%;
-        max-width:100%;
+        max-width:fit-content;
         object-fit:contain;
       }
-      height:inherit;
+      // height:inherit;
     }
   }
 

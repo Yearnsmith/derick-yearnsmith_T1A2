@@ -413,6 +413,14 @@ header {
   display: none;
 }
 
+.content-img {
+  width: 100%;
+}
+.content-img img {
+  height: 100%;
+  object-fit: contain;
+}
+
 footer {
   display: flex;
   flex-direction: column;
@@ -846,11 +854,10 @@ header nav .current-page {
   }
   .blog-post .content-img {
     width: 100%;
-    height: inherit;
   }
   .blog-post .content-img img {
     height: 100%;
-    max-width: 100%;
+    max-width: fit-content;
     object-fit: contain;
   }
 }

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yearnsmith /blog</title>
+    <title>Yearnsmith:~/ blog</title>
     <link href='https://fonts.gstatic.com' rel='preconnect' crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" type="text/css">
     <link rel="stylesheet" href="css/main.css" type="text/css">
@@ -33,18 +33,18 @@
         Each blog post is a stand-alone portion able to be syndicated.-->
 
         <!--.guest is used to dynamically add text indicating this is a guest post. It should be repalced with javascript so text is added to the DOM.-->
-        <article id="pirate-ipsum" class="blog-post guest">
+      <article id="pirate-ipsum" class="blog-post guest">
 
         <!--section used for semantic design.-->
         <section class="post-header">
 
           <h3>Pirate Ipsum</h3>
           <div class="author">colab</div>
-          <div class="post-date">13 Nov 2020 </div>
+          <div class="post-date">15 Nov 2020 </div>
           <!--figure component used to contain and manipulate img for responsive design.-->
           <!-- An ARIA role of "presentation" has been added because the image is only for decorative purposes.Because the image is large, I have hidden it on mobile view to save data, and so I'm not learning and implementing src-set.-->
           <figure class="header-img" role="presentation">
-            <img role="presentation" src="images/ajkeller- u-cal-lib-14581216340-flickr.jpg" alt="Illustration of two pirates">
+            <img role="presentation" src="images/blog/pirate-ipsum/ajkeller-u-cal-lib-14581216340-flickr.jpg" alt="Illustration of two pirates">
             <figcaption>
               <div class="img-caption">"If you talk to me like that I will cut you down where you stand!" (from source)</div>
               <div class="img-credit">George Varian, care of British Library, via Flickr Commons</div>
@@ -67,9 +67,9 @@
           <p>
             Dead men tell no tales lateen sail parrel piracy hulk prow measured fer yer chains gunwalls Pieces of Eight grog blossom. Warp bring a spring upon her cable haul wind blow the man down jack gangplank heave down Buccaneer rum league. Heave down yawl come about interloper wench Jack Tar nipper quarter cackle fruit pink.
           </p>
-          <figure class="content-img" role="presentation">
-            <!--temp random image service. To Do: Select images & give credit-->
-            <img role="presentation" src="images/andres-dallimonti-JGNGQxkBZ3U-unsplash.jpg" alt="large sailing ship">
+          <!--image component for blog post-->
+          <figure class="content-img">
+            <img src="images/blog/pirate-ipsum/andres-dallimonti-JGNGQxkBZ3U-unsplash.jpg" alt="Large sailing ship">
             <figcaption class="blog-content-img">
               <div class="img-caption">A pirate ship</div>
               <div class="img-credit">Photo by <a href="https://unsplash.com/@dallimonti?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Andrés Dallimonti</a> on <a href="https://unsplash.com/s/photos/sailing-ship?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></div>
@@ -79,23 +79,27 @@
         <!--To Do: Add indieweb-like POSSE(https://indieweb.org/POSSE) & backfeedhttps://indieweb.org/backfeed)-->
       </article><!--/#project-1-->
 
-      <article id="monocle-ipsum" class="blog-post guest">
-        <section class="post-header">
+      <article id="monocle-ipsum" class="blog-post">
+      <section class="post-header">
 
-          <figure class="header-img" role="presentation">
-            <!--temp random image service. To Do: Select images & give credit-->
-            <img role="presentation" src="https://source.unsplash.com/1200x500/?tech,art" alt="Some image">
-            <figcaption>
-              <div class="img-caption">Caption</div>
-              <div class="img-credit">Image Credit</div>
-            </figcaption>
-          </figure>
-          
-          <h3>Monocle Ipsum</h3>
-          <div class="author">Sam Dal Monte</div>
-          <div class="post-date">25 Oct 2020</div>
-          <a class="display-url" href="#monocle-ipsum">http://www.yearnsmith-t1a2.netlify.app/blog.html#monocle-ipsum</a>
-        </section>
+        <h3>Monocle Ipsum</h3>
+        <div class="author">Sam Del Monte</div>
+        <div class="post-date">25 Oct 2020 </div>
+        <!--figure component used to contain and manipulate img for responsive design.-->
+        <!-- An ARIA role of "presentation" has been added because the image is only for decorative purposes.Because the image is large, I have hidden it on mobile view to save data, and so I'm not learning and implementing src-set.-->
+        <figure class="header-img" role="presentation">
+          <img role="presentation" src="images/blog/monocle-ipsum/e-campina-a-de-segurola-9577520148-lib-congress-flickr.png" alt="Illustration of two pirates">
+          <figcaption>
+            <div class="img-caption">"If you talk to me like that I will cut you down where you stand!" (from source)</div>
+            <div class="img-credit">George Varian, care of British Library, via Flickr Commons</div>
+          </figcaption>
+        </figure>
+
+        <!--component: display-url for highlighting important URLS. This one is used as a permalink to this article of this page.-->
+        <!--future: use javascript or templating language to dynamically formulate and insert this.-->
+        <a class="display-url" href="#monocle-ipsum">https://www.derick-yearnsmith-t1a2.netlify.app/blog.html#monocle-ipsum</a>
+      </section><!--/header-->
+
         <div class="post-content full-width-content">
           <p>
             Monocle ipsum dolor sit amet helsinki ANA wardrobe Boeing 787 charming efficient. Sleepy hand-crafted intricate bulletin artisanal conversation. Bulletin elegant Boeing 787 Ettinger St Moritz destination pintxos liveable Gaggenau Shinkansen international handsome. Zürich tote bag elegant, Beams Gaggenau concierge Ettinger international Muji Airbus A380 airport business class punctual vibrant Washlet. Quality of life the best exclusive alluring Beams extraordinary smart bulletin Scandinavian Tsutaya. Global Scandinavian premium essential. Extraordinary Singapore izakaya emerging essential cosy.
@@ -105,10 +109,10 @@
           </p>
           <figure class="content-img">
             <!--temp random image service. To Do: Select images & give credit-->
-            <img role="presentation" src="https://source.unsplash.com/600x400/?tech,art" alt="Some other image">
+            <img role="presentation" src="images/blog/monocle-ipsum/e-campina-a-de-segurola-9577520148-lib-congress-flickr.png" alt="Two men, one with monocle">
             <figcaption class="blog-content-img">
-              <div class="img-caption">Caption</div>
-              <div class="img-credit">Image Credit</div>
+              <div class="img-caption">Enrique Granados Campiña and Andrés Perelló de Segurola</div>
+              <div class="img-credit">Courtesy of <a href="https://loc.gov/pictures/collection/ggbain/">Bain Collection</a> from Library of Congress, via <a href="https://www.flickr.com/commons">Flickr Commons</a>.</div>
             </figcaption>
           </figure>
           <p>
@@ -126,7 +130,31 @@
           </ul>
           </div><!--/.blog-post-->
         <!--To Do: Add indieweb-like POSSE(https://indieweb.org/POSSE) & backfeed(https://indieweb.org/backfeed)-->
-      </article><!--/#project-1-->
+      </article><!--/#monocle-->
+
+      <article id="coffee" class="blog-post guest">
+        <section class="post-header">
+  
+          <h3>Monocle Ipsum</h3>
+          <div class="author">Sam Del Monte</div>
+          <div class="post-date">25 Oct 2020 </div>
+          <!--figure component used to contain and manipulate img for responsive design.-->
+          <!-- An ARIA role of "presentation" has been added because the image is only for decorative purposes.Because the image is large, I have hidden it on mobile view to save data, and so I'm not learning and implementing src-set.-->
+          <figure class="header-img" role="presentation">
+            <img role="presentation" src="images/ajkeller- u-cal-lib-14581216340-flickr.jpg" alt="Illustration of two pirates">
+            <figcaption>
+              <div class="img-caption">"If you talk to me like that I will cut you down where you stand!" (from source)</div>
+              <div class="img-credit">George Varian, care of British Library, via Flickr Commons</div>
+            </figcaption>
+          </figure>
+  
+          <!--component: display-url for highlighting important URLS. This one is used as a permalink to this article of this page.-->
+          <!--future: use javascript or templating language to dynamically formulate and insert this.-->
+          <a class="display-url" href="#monocle-ipsum">https://www.derick-yearnsmith-t1a2.netlify.app/blog.html#monocle-ipsum</a>
+        </section><!--/header-->
+  
+          <div class="post-content full-width-content">
+
 
     </main>
 
