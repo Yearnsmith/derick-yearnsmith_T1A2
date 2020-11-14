@@ -487,6 +487,9 @@ form {
   display: flex;
   flex-direction: column;
 }
+form .form-deco {
+  display: none;
+}
 form input, form label textarea, form label textarea.error-input, form input.error-input {
   height: 1.7em;
   padding: 0 0.5ch;
@@ -525,6 +528,9 @@ form input.error-input:invalid, form label textarea.error-input:invalid {
   border-color: #dc322f !important;
   padding: 0 0.5ch;
 }
+form input.error-input:invalid#form-input-message:invalid, form label textarea.error-input:invalid#form-input-message:invalid {
+  min-height: 8.5em;
+}
 form input.error-input:invalid::placeholder, form label textarea.error-input:invalid::placeholder {
   color: #002b36;
 }
@@ -541,7 +547,7 @@ form label {
   margin-top: 0.85em;
 }
 form label textarea {
-  height: 8.5em;
+  min-height: 8.5em;
 }
 
 /*Change this. It's not working*/
@@ -898,7 +904,6 @@ header nav .current-page {
     z-index: -1000;
     grid-row: 1/15;
     width: 100vw;
-    grid-template-columns: 14vw 70vw 15vw;
     grid-template-columns: 1fr 70vw 1fr;
     margin: 0;
   }
@@ -965,16 +970,64 @@ header nav .current-page {
     max-width: 70vw;
   }
 
+  .page-container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+  }
+
   form {
     display: grid;
-    flex-flow: row nowrap;
+    grid-template-rows: 7em 10em 5em;
+    grid-template-columns: repeat(2, 2fr 4ch) 4fr;
   }
   form label {
-    display: grid;
-    height: fit-content;
+    margin: 0;
+    padding: 0;
+    grid-row: 1/2;
+    font-size: 125%;
   }
-  form #form-label-email::before {
-    content: ".";
+  form label > input, form label > input.error-input, form label > textarea, form label > textarea.error-input {
+    flex-shrink: 1;
+  }
+  form label + .form-deco {
+    margin: 0;
+    padding: 0;
+    display: initial;
+    grid-row: 1/2;
+    font-size: 3rem;
+    justify-self: center;
+    align-self: center;
+  }
+  form label#form-label-name {
+    grid-row: 1/2;
+    grid-column: 1/2;
+  }
+  form label#form-label-name + .form-deco {
+    grid-column: 2/3;
+  }
+  form label#form-label-email {
+    grid-column: 3/4;
+  }
+  form label#form-label-email + .form-deco {
+    grid-column: 4/5;
+  }
+  form label#form-label-subject {
+    grid-column: 5/6;
+  }
+  form label#form-label-subject + .form-deco {
+    grid-row: 2/3;
+    grid-column: 4/5;
+    align-self: start;
+    padding-top: 0.4em;
+  }
+  form label#form-label-message {
+    grid-row: 2/3;
+    grid-column: 5/6;
+  }
+  form #submit-contact {
+    grid-row: 3/4;
+    grid-column: 5/6;
   }
 }
 

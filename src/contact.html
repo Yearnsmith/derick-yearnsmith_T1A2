@@ -25,22 +25,28 @@
         <a class="current-page">contact</a>
       </nav>
     </header>
-    <main id="main">
+    <main id="main" class="page-container">
       <form id="contact-form" name="contact" netlify>
 
         <label for="form-input-name" id="form-label-name">name:
           <input type="text" name="name" id="form-input-name" placeholder="your prefered name" required><span></span>
         </label>
 
+        <div class="form-deco">.</div>
+
         <label for="form-input-email" id="form-label-email">email:
           <input type="email" name="email" id="form-input-email" placeholder="i.e. d.yearnsmith@gmail.com" required><span></span>
-        </label>
+         </label>
+
+        <div class="form-deco prompt">$</div>
 
         <label for="form-input-subject" id="form-label-subject">subject:
           <input type="text" name="subject" id="form-input-subject" placeholder="the subject of your message" required><span></span>
         </label>
 
-        <label for="form-input-message" id="form-label-subject">Message:
+        <div class="form-deco prompt">$</div>
+
+        <label for="form-input-message" id="form-label-message">Message:
           <textarea name="message" id="form-input-message" cols="30" rows="10" placeholder="Your message goes here. :)"required></textarea><span></span>
         </label>
 

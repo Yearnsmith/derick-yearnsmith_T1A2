@@ -224,7 +224,7 @@ form{
   // margin-top:1.7em;
   display:flex;
   flex-direction: column;
-
+    .form-deco{display:none;}
   input{
     height:1.7em;
     padding:0 .5ch;
@@ -257,6 +257,9 @@ form{
         @include error-text();
         border-color:$red !important;
         padding:0 .5ch;
+        &#form-input-message:invalid{
+          min-height:8.5em
+        }
         &::placeholder{
           color:$base03;
         }
@@ -274,7 +277,7 @@ form{
     
     textarea{
       @extend input;
-      height:8.5em;
+      min-height:8.5em;
     }
   }
 
