@@ -10,13 +10,17 @@
 1. [Target Audience](#target-audience)
 1. [Tech Stack](#tech-stack)
 1. [Screenshots](#screenshots)
-
+   1. [index](#index.html)
+   2. [about.html](#about.html)
+   2. [projects.html](#projects.html)
+   2. [blog.html](#blog.html)
+   2. [contact.html](#contact.html)
 
 ## Location
 
 ### URL
 
- [https://www.derick-yearnsmith-t1a2.netlify.app](https://github.com/Yearnsmith/derick-yearnsmith_T1A2)
+ [https://derick-yearnsmith-t1a2.netlify.app/](https://derick-yearnsmith-t1a2.netlify.app/)
 
 ### GitHub Repository
 
@@ -36,7 +40,7 @@ A portfolio website for potential employers
 - 4 interlinking HTML5 pages
 - [Semantic HTML](#semantic-tags)
 - [Accessible HTML](#accessible-features)
-- Mobile written Mobile First
+- Authored as Mobile First
 - CSS `@Media` Breakpoints for display accross devices
 - CSS Flexbox and Grid used for responsive design
 - Scss utilised to style pages in CSS
@@ -51,6 +55,7 @@ A portfolio website for potential employers
   - generate form hints
 - SRI
 - Links to professional profiles
+- Link to download resume
 
 ### Semantic Tags
 
@@ -73,6 +78,20 @@ A portfolio website for potential employers
 
 ## Sitemap
 
+```
+                      index.html
+                          |
+      |------------|--------------|-------------|
+      |            |              |             |
+  about.html  projects.html   blog.html     contact.html
+      |
+ dev-resume-
+ nov-2020-
+ current.pdf
+```
+
+![sitemap](docs/sitemap.png)
+
 ## Target Audience
 
 - Future employers
@@ -93,6 +112,7 @@ A portfolio website for potential employers
 - Netlify (Deployment Platform)
 
 ### Source Control
+
 - Git
 
 ## Screenshots
