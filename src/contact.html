@@ -8,13 +8,17 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" type="text/css">
     <link rel="stylesheet" href="css/main.css" type="text/css">
   </head>
-  <body id="contact-page">
+
+  <body>
+    <!--Semantic header-->
     <header id="navigation">
+
       <a id="skip-to-main" href="#main">skip to main</a>
       
       <h1><a href="index.html">Yearn&shy;smith</a></h1>
       <h2>Contact</h2>
 
+      <!--Semantic navigation-->
       <nav id="site-navigation">
         <a href="#navigation" class="more-link">more</a>
         <a href="#" class="less-link">less</a>
@@ -24,19 +28,28 @@
         <a href="blog.html">blog</a>
         <a class="current-page">contact</a>
       </nav>
+
     </header>
+
+    <!--Semantic main content-->
     <main id="main" class="page-container">
+
+
       <div class="full-width-content">
         <p>
           For reasons of productivity and self-esteem, I generally eschew social media. But you can send me an ol' fashion email with the form below:
         </p>
       </div>
+
+      <!--The form `name` attribute is usful if I have other forms on the website. Which I may in the future.-->
       <form id="contact-form" name="contact" netlify>
 
+        <!--Laels have `for` attributes.-->
         <label for="form-input-name" id="form-label-name">name:
           <input type="text" name="name" id="form-input-name" placeholder="your prefered name" required><span></span>
         </label>
 
+        <!--This will be hidden on mobile and tablet versions of site. In the future I'll implement it with javascript.-->
         <div class="form-deco">.</div>
 
         <label for="form-input-email" id="form-label-email">email:
@@ -58,7 +71,8 @@
       <input id="submit-contact" type="submit" value="send">
       </form>
 
-      <div class="social-icons">
+      <!--This is an aside, as the main purpose of this page is a contact form.-->
+      <aside class="social-icons">
 
         <h3>Take Your Chances:</h3>
  
@@ -72,13 +86,16 @@
           <span>Linked In Profile</span>
         </a>
         
-      </div>
+      </aside>
 
     </main>
 
+    <!--Semantic footer-->
     <footer>
       <div class="copyright">&copy; 2020 Derick Yearnsmith</div>
       <div class="with-love">Hand coded with 💖 from my 🛋</div>
+
+      <!--semantic navigation-->
       <nav class="footer-nav">
         <a href="index.html">home</a>
         <a href="about.html">about</a>
@@ -88,8 +105,12 @@
       </nav>
     </footer>
 
-  <script>//from: https://usefulangle.com/post/244/html-form-prevent-validation-on-page-load
-    /* blur event for all input fields in form */
+<!--This javascript is used to prevent the default browser behaviour of styling :invalid form inputs on page load, before users enter any information. This is to provide a better experience for users. Although I am not currently able to write this myself, I could read and understand what was written, so decided to include it until :user-invalid is implemented in browsers. -->
+
+  <script>
+  //from: https://usefulangle.com/post/244/html-form-prevent-validation-on-page-load
+  
+  /* blur event for all input fields in form */
 document.querySelectorAll("#contact-form input, #contact-form textarea").forEach(function(element) {
     element.addEventListener('blur', function() {
         // if input field passes validation remove the error class, else add it

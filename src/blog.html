@@ -9,12 +9,14 @@
     <link rel="stylesheet" href="css/main.css" type="text/css">
   </head>
   <body>
+    <!--semantic header-->
     <header id="navigation">
       <a id="skip-to-main" href="#main">skip to main</a>
 
       <h1><a href="index.html">Yearn&shy;smith</a></h1>
       <h2>Blog</h2>
 
+      <!--Semantic navigation-->
       <nav id="site-navigation">
         <a href="#navigation" class="more-link">more</a>
         <a href="#" class="less-link">less</a>
@@ -24,8 +26,10 @@
         <a class="current-page">blog</a>
         <a href="contact.html">contact</a>
       </nav>
+
     </header>
 
+    <!--semantic tag for main content-->
     <main id="main">
       <!--Replace this eventually with Rails, Templating language, or javascript fetch() API.-->
 
@@ -39,16 +43,26 @@
         <section class="post-header">
 
           <h3>Pirate Ipsum</h3>
+          <!--Bonus author credit-->
           <div class="author">colab</div>
+
+          <!--Date published-->
           <div class="post-date">15 Nov 2020 </div>
+
           <!--figure component used to contain and manipulate img for responsive design.-->
           <!-- An ARIA role of "presentation" has been added because the image is only for decorative purposes.Because the image is large, I have hidden it on mobile view to save data, and so I'm not learning and implementing src-set.-->
           <figure class="header-img" role="presentation">
+
             <img role="presentation" src="images/blog/pirate-ipsum/ajkeller-u-cal-lib-14581216340-flickr.jpg" alt="Illustration of two pirates">
+
             <figcaption>
+
               <div class="img-caption">"If you talk to me like that I will cut you down where you stand!" (from source)</div>
+              <!--giving credit to image sources-->
               <div class="img-credit">George Varian, courtesy of British Library, via F<a href="https://www.flickr.com/commons">Flickr Commons</a></div>
+
             </figcaption>
+
           </figure>
 
 
@@ -57,6 +71,7 @@
           <a class="display-url" href="http://www.derick-yearnsmith-t1a2.netlify.app/blog.html#pirate-ipsum">http://www.derick-yearnsmith-t1a2.netlify.app/blog.html#pirate-ipsum</a>
         </section><!--/header-->
 
+        <!--Sections are used because they are all a part of the larger component. I could also add an ARIA landmark to allow assistive technology to skip to the article proper.-->
         <section class="post-content full-width-content">
           <p>
             Gaff take a caulk chase guns Gold Road me scuttle jib provost prow Plate Fleet. Lateen sail Sink me fire ship league code of conduct warp chase guns bounty rigging fire in the hole. Pieces of Eight Jack Tar yo-ho-ho scurvy grog blossom gangplank hogshead sheet line matey.
@@ -67,23 +82,37 @@
           <p>
             Dead men tell no tales lateen sail parrel piracy hulk prow measured fer yer chains gunwalls Pieces of Eight grog blossom. Warp bring a spring upon her cable haul wind blow the man down jack gangplank heave down Buccaneer rum league. Heave down yawl come about interloper wench Jack Tar nipper quarter cackle fruit pink.
           </p>
+
           <!--image component for blog post-->
           <figure class="content-img">
+            <!--Image with alt tag for accessible design-->
             <img src="images/blog/pirate-ipsum/andres-dallimonti-JGNGQxkBZ3U-unsplash.jpg" alt="Large sailing ship">
+
             <figcaption class="blog-content-img">
+
               <div class="img-caption">A pirate ship</div>
+
+              <!--Ethical considerations has me crediting these artists.-->
               <div class="img-credit">Photo by <a href="https://unsplash.com/@dallimonti?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Andrés Dallimonti</a> on <a href="https://unsplash.com/s/photos/sailing-ship?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></div>
+
             </figcaption>
+
           </figure>
+
         </section><!--/.post-content-->
+
         <!--To Do: Add indieweb-like POSSE(https://indieweb.org/POSSE) & backfeedhttps://indieweb.org/backfeed)-->
+
       </article><!--/#pirate-ipsum-->
 
+      <!--The following articles are the same as above, but with more or less images and text in different configurations.-->
       <article id="monocle-ipsum" class="blog-post">
       <section class="post-header">
 
         <h3>Monocle Ipsum</h3>
+
         <div class="author">Sam Del Monte</div>
+
         <div class="post-date">25 Oct 2020 </div>
         <!--figure component used to contain and manipulate img for responsive design.-->
         <!-- An ARIA role of "presentation" has been added because the image is only for decorative purposes.Because the image is large, I have hidden it on mobile view to save data, and so I'm not learning and implementing src-set.-->
@@ -272,9 +301,11 @@
       </article>      
     </main>
 
+    <!--Semantic footer-->
     <footer>
       <div class="copyright">&copy; 2020 Derick Yearnsmith</div>
       <div class="with-love">Hand coded with 💖 from my 🛋</div>
+      <!--Senamtic navigation-->
       <nav class="footer-nav">
         <a href="index.html">home</a>
         <a href="about.html">about</a>

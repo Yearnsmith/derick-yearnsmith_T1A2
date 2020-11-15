@@ -9,13 +9,17 @@
     <link rel="stylesheet" href="css/main.css" type="text/css">
   </head>
   <body>
+    <!--Semantic Header-->
     <header id="navigation">
 
+      <!--Accessible "Skip To Main"-->
       <a id="skip-to-main" href="#main">skip to main</a>
+
 
       <h1><a href="index.html">Yearn&shy;smith</a></h1>
       <h2>Projects</h2>
 
+      <!--Semantic Navigation-->
       <nav id="site-navigation">
         <a href="#navigation" class="more-link">more</a>
         <a href="#" class="less-link">less</a>
@@ -27,20 +31,33 @@
       </nav>
     </header>
 
+    <!--Semantic 'Main'-->
     <main id="main">
+
+      <!--Each project is a separate article. I could export this to it's own page in the future.-->
       <article id="project-la-experimental" class="project">
         <h3>La Experi&shy;men&shy;tal</h3>
+        
         <a class="display-url" href="https://experimentals.dericksmith.com/">https://experimentals.dericksmith.com/</a>
+     
+        <!--I have used divs here, since any headers will sit outside the content area. This would be confusing for screen readers.-->
         <div class="project-desc full-width-content">
+
           <p>
             I built this site for a theatre group I co-founded. Sadly, the group disbanded before this saw the light of day (Don't worry, we're still all friends).
           </p>
           <p>
             I decided to knuckle down and write a non-SQL relient PHP site from scratch. I dove deep into learning basic PHP, and even built what I hope are secure forms. It uses a heavily modified Skeleton CSS framework. 
           </p>
+
         </div><!--/.project-desc-->
+
+
         <h4>What I learned</h4>
+
+        <!--I have used divs here, since any headers will sit outside the content area. This would be confusing for screen readers.-->
         <div class="learnings full-width-content">
+
           <ul>
             <li>Basic PHP (layout and form validation)</li>
             <li>Basic PHP form security</li>
@@ -50,9 +67,12 @@
             <li>A lot about e-mail headers and Character Encoding.</li>
             <li>Character Encoding is complicated.</li>
           </ul>
-        </div><!--/.learnings-->
-      </article><!--/#project-1-->
 
+        </div><!--/.learnings-->
+
+      </article><!--/la-experimental-->
+
+      <!--The following articles are the same as above-->
       <article id="project-tribute-page" class="project">
         <h3>Tribute Page</h3>
         <a class="display-url" href="http://www.project-url.com">http://www.project-url.com</a>
@@ -120,9 +140,11 @@
 
     </main>
 
+    <!--Semantic footer-->
     <footer>
       <div class="copyright">&copy; 2020 Derick Yearnsmith</div>
       <div class="with-love">Hand coded with 💖 from my 🛋</div>
+      <!--Semantic navigation-->
       <nav class="footer-nav">
         <a href="index.html">home</a>
         <a href="about.html">about</a>

@@ -9,11 +9,17 @@
     <link rel="stylesheet" href="css/main.css" type="text/css">
   </head>
   <body>
+    <!-- For a footer that sticks to the bottom-->
     <div id="index-container">
-      <img  id="splash-image" class="header-img" src="images/splash.png" aria-role="presentation">
+
+      <!--Semantic tag for navigation-->
       <header id="navigation">
+
+        <!--Allows users of navigation aides to skip navigation menu-->
         <a id="skip-to-main" href="#main">skip to main</a>
+        <!--&shy; inserts a hyphen that will only appear when the word needs to break: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/wbr-->
         <h1><a href="index.html">Yearn&shy;smith</a></h1>
+
         <nav id="site-navigation">
           <a href="#navigation" class="more-link">more</a>
           <a href="#" class="less-link">less</a>
@@ -25,7 +31,9 @@
         </nav>
       </header>
 
+      <!--Semantic tag for main content of page-->
       <main id="main" class="index-page">
+        <!--article is being used as a container element. This is also a stand-alone piece of content.-->
         <article class="intro-box">
               <div class="intro-text">
                 Hi!<br>
@@ -57,9 +65,12 @@
         </article><!--/.intro-box-->
       </main>
 
+      <!--Semantic footer tag-->
       <footer>
         <div class="copyright">&copy; 2020 Derick Yearnsmith</div>
         <div class="with-love">Hand coded with 💖 from my 🛋</div>
+
+        <!--Semantic footer navigation-->
         <nav class="footer-nav">
           <a class="current-page">home</a>
           <a href="about.html">about</a>
