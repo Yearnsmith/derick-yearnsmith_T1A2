@@ -9,12 +9,16 @@
     <link rel="stylesheet" href="css/main.css" type="text/css">
   </head>
   <body>
+    <!--Semantic header component-->
     <header id="navigation">
+
+      <!--Accessible 'skip to main' `anchor` allows people using site navigation aides to skip menu options if desired.-->
       <a id="skip-to-main" href="#main">skip to main</a>
 
       <h1><a href="index.html">Yearn&shy;smith</a></h1>
       <h2>About</h2>
 
+      <!--Semantic navigation component:-->
       <nav id="site-navigation">
         <a href="#navigation" class="more-link">more</a>
         <a href="#" class="less-link">less</a>
@@ -28,34 +32,59 @@
 
     <main id="main">
       
-      <section id="biography">
-        <!--The .dual-flex-box begins as one column in small width, and expande to become a two column layout on larger screens. The .sml-box should shrink to be supplimentary to .lrg-box's content i.e. image, aside, etc. -->
+      <!--<article> used in place of <section> based on this article: https://www.smashingmagazine.com/2020/01/html5-article-section/-->
+      <article id="biography">
+
+        <!--Text/Graphical component: The .dual-column-flex begins as one column in small width, and expands to become a two column layout on larger screens. The .sml-box should shrink to be supplimentary to .lrg-box's content i.e. image, aside, etc. -->
         <div class="two-column-flex full-width-content">
-          <div class="sml-box">
+
+          <div class="sml-box"><!--I originally used this class on the below <figure>, but it returned undesireable results as the image resized.-->
+
+            <!--Graphical component: figure used to implement an image with a caption-->
             <figure>
               <!-- <img src="images/headshot.png" alt="Derick's face"> -->
               <img src="images/dericks-face.jpg" alt="A confused looking man">
+              <!--figcaption used to mark up caption-->
               <figcaption>This is Derick's face.</figcaption>
+
             </figure>
+
           </div><!--/.sml-box-->
+
           <div class="lrg-box">
+
             <p>
               Hi, Welcome to my portfolio!
             </p>
             <p>
-              I'm a full stack developer in training at Coder Academy — specialising in MEARN stack.
+              I'm a Junior dev in training at Coder Academy, Brisbane. Here, I'm adding to my current HTML/CSS skillbase with the latest in-demand technologies.
             </p>
             <p>
-              I also have a love for css, FOSS, and the indie web.
+              I have a love for css, FOSS, and the indie web.
             </p>
+
           </div><!--/.lrg-box-->
 
-        </div>
+        </div><!--/.two-column-flex-->
 
-        </div><!--/.dual-flex-box-->
-      </section><!--/#biography-->
+      </article><!--/#biography-->
+        
+      <!--semantic element for supplimentary information:-->
+      <aside class="social-icons">
+ 
+          <a href="https://github.com/Yearnsmith/">
+            <img src="images/GitHub-Mark-64px.png" alt="GitHub logo">
+            <span>GitHub Profile</span>
+          </a>
 
-      <section id="experience">
+          <a href="https://www.linkedin.com/in/dericksmith/">
+            <img src="images/LI-In-Bug.png" alt="Linked In Logo">
+            <span>Linked In Profile</span>
+          </a>
+          
+          </aside>
+
+      <article id="experience">
         <h3>Experience</h3>
         <aside class="two-column-flex full-width-content">
           <div id="tldr" class="lrg-box">
@@ -70,7 +99,7 @@
           <div id="resume" class="sml-box">
             <!--Shout out to: https://css-tricks.com/building-good-download-button/-->
             <h4>Download my resume:</h4>
-            <a download href=""><span>&#9046;</span>Download Resume</a>
+            <a href="downloads/dev-resume-nov-2020-current.pdf" download="derick-yearnsmith-resume.pdf"><span>&#9046;</span>Download Resume</a>
           </div><!--/.sml-box-->
         </aside><!--/.dual-column-flex-->
         <div class="full-width-content">
@@ -84,9 +113,9 @@
             I have a lot of experience working in tight-nit teams, in un-charted territory, on results driven projects with tight deadlines for a demanding audience. And that's just my Theatre career.
           </p>
         </div><!--/.full-width-content-->
-      </section><!--/#experience-->
+      </article><!--/#experience-->
 
-      <section id="sup-info">
+      <article id="sup-info">
         <h3>Superfluous information</h3>
         <div class="full-width-content">
           <ul>
@@ -101,7 +130,7 @@
           
           <p>Last — but the opposite of least — I'm husband to an amazingly patient woman, and a follower of Jesus (but not that kind). </p>
         </div><!--/.full-width-content-->
-      </section><!--/#sup-info-->
+      </article><!--/#sup-info-->
 
     </main>
 

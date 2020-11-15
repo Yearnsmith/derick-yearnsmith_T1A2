@@ -76,6 +76,12 @@ $breakpoint-desktop: 900px;
     margin:0 4ch 0 auto;
   }
 
+  .social-icons{
+    max-width:70ch;
+    margin-top:3.4em;
+  }
+
+
   footer{
     flex-flow: row nowrap;
     justify-content: space-evenly;
@@ -338,11 +344,11 @@ $breakpoint-desktop: 900px;
   
 
 //contact form (text component)
-.page-container{
-  display:flex;
-  flex-flow:column nowrap;
-  justify-content: space-between;
-}
+// .page-container{
+//   display:flex;
+//   flex-flow:column nowrap;
+//   justify-content: space-between;
+// }
 
   form{
     display:grid;

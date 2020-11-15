@@ -441,6 +441,31 @@ header {
   object-fit: contain;
 }
 
+.social-icons {
+  min-width: 50vw;
+  max-width: 90vw;
+  margin: 3.4em auto 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.social-icons a {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-around;
+}
+.social-icons a:link, .social-icons a:visited {
+  border: none;
+}
+.social-icons a:link:not(img), .social-icons a:visited:not(img) {
+  text-decoration: underline;
+}
+.social-icons a span {
+  padding: 0.5em 1ch;
+}
+
 footer {
   display: flex;
   flex-direction: column;
@@ -762,6 +787,11 @@ header nav .current-page {
     margin: 0 4ch 0 auto;
   }
 
+  .social-icons {
+    max-width: 70ch;
+    margin-top: 3.4em;
+  }
+
   footer {
     flex-flow: row nowrap;
     justify-content: space-evenly;
@@ -1005,12 +1035,6 @@ header nav .current-page {
   }
   .full-width-content ~ h4 {
     max-width: 70vw;
-  }
-
-  .page-container {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-between;
   }
 
   form {
