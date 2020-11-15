@@ -1,5 +1,9 @@
+/*Scss Variables are loaded first, because they are used througout the site.
+
+
 //Vars
-// Colours from Solarized (ethanschoonover.com/solarized)
+// Colours from Solarized (https://ethanschoonover.com/solarized)
+
 /*notes on usage:
 Dark colorscheme: bg & body => base03:base0 (not base00)
 highlighted bg & body => base02:base1.
@@ -26,10 +30,12 @@ $magenta:#d33682;
 $violet:#6c71c4;
 $blue:#268bd2;
 $cyan:#2aa198;
-$cyan-t:#2aa198ea;//semi-transparent
+$cyan-t:#2aa198ea;//translucent
 $green:#859900;
 $base03-t:#002b36cc;//translucent
 
+
+//Used if I would like to change the colour scheme in the future. 
 // Page Colours
 $colour-bg:$base03;
 $colour-bg-transp:#002b36df;

@@ -1,7 +1,9 @@
 
+// @import used to separate portions of code for easier reading and editing.
+
 @import "partials/index-animation";
 
-/*reset*/
+///// HTML Reset ////
 html {
   @include margin-padding();
   font-size: 16px;

@@ -1,9 +1,19 @@
+/* Mixins are the second file to be loaded into main.scss. these should be declared after variables, since they also will be used throughout.*/
+
+//get variables
 @import "variables";
 /////////// @mixins /////////
+
+//Used to reset padding and margins for components.
+//I have used this to do a complete overide before adding new margins and padding.
+//I should extend it with arguments and options to allow this.
 @mixin margin-padding{
   margin:0;
   padding:0;
 }
+
+//also used throughout as a major thematic choice.
+//I will expand on this to allow arguments for colours and padding.
 @mixin highlight-text {
   padding:0;
   background:$cyan;
@@ -12,29 +22,37 @@
   color:$base03;
   font-weight: bold;
 }
+//Used mainly for the forms
+//in the spirit of DRY (and weird sass inherience)
+//I have used it as a @mixin. It could also be used throughout the site.
 @mixin error-text{
   background-color:$red;
   color:$base03;
   font-weight:bold;
   padding:.15em;
 }
+
 //responsive image
+//used in conjunction with .two-column-flex. I thought I would use this more often than I did.
+//this is applied first to a figure tags, or other image containers.
 @mixin resposive-img(){
-  @include margin-padding();
-  flex-shrink:2;
+  @include margin-padding();//reset margins and padding
+  flex-shrink:2; //the image container should shrink more than any text in a flex container.
   flex-grow:1;
-  flex-basis:calc(100%/3);
-  display:flex;
+  flex-basis:calc(100%/3); //better than 33.3333(etc.). Container will be 1/3 of it's parent.
+  
+  //Blank line to mentally separate the flex-item properties from flex container properties.
+  display:flex; //prepares container for holding `img` and `figcaption`
   flex-direction:column;
   align-items: center;
   justify-content: space-around;
   img{
     height:auto;
-    min-width:150px;
-    width:100%;
-    max-width:275px;
-    flex-grow:1;
+    min-width:150px;//This prevents image from shrinkinginto oblivion 
+    width:100%;//responsive to container size.
+    max-width:275px;//stops image becoming indefinately large
+    flex-grow:1;//allows image to be a reasonable size when it occupies it's own line
     // flex-shrink:2;
-    object-fit: contain;
+    object-fit: contain;//shrink image to fit container. Or do nothing if it is already small enough to fit.
   }
 }

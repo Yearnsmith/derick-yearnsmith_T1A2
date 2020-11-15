@@ -1,4 +1,10 @@
 @charset "UTF-8";
+/*Scss Variables are loaded first, because they are used througout the site.
+
+
+//Vars
+// Colours from Solarized (https://ethanschoonover.com/solarized)
+
 /*notes on usage:
 Dark colorscheme: bg & body => base03:base0 (not base00)
 highlighted bg & body => base02:base1.
@@ -180,7 +186,6 @@ main.index-page {
   animation: 2.5s forwards 10.25s cursor, 1s 2.5 forwards 13s cursor-blink;
 }
 
-/*reset*/
 html {
   margin: 0;
   padding: 0;
