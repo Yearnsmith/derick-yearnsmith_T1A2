@@ -20,8 +20,10 @@ body{
   // min-width:100vw;
 }
 
-////// Typography///////////
+/*////// Typography////////
 ///links///
+
+Styled text component*/
 a:link{
   text-decoration:none;
   color:$colour-link;
@@ -35,6 +37,9 @@ a:visited{
   background-color:$colour-link;
   color:$colour-bg;
 }
+
+/*text-component*/
+
 .display-url{
   @include highlight-text();
   background-color: $colour-link;
@@ -43,7 +48,7 @@ a:visited{
   word-break:break-word;
   &:link,&:visited{@extend .display-url;}
 }
-//// Headers ////
+/* Headers   */
 h2,h3,h4,h5,h6{
   font-weight:700;
   font-family: 'Courier Prime';
@@ -60,8 +65,10 @@ h1{
   }
   a:visited{  color:$colour-bg; border:none;}
 }
-//sizing
-/*line-height from: https://grtcalculator.com/, sizing rules from:http://webtypography.net*/ 
+
+
+/*// font and line-height sizing///
+line-height from: https://grtcalculator.com/, sizing rules from:http://webtypography.net*/ 
 h1{font-size:3rem;padding:0; margin-bottom:.7058em;}
 h2{  font-size:3rem; margin:1.25rem 0 .7058em; }
 h3{
@@ -74,7 +81,7 @@ h4{  font-size:2rem; margin:.9411em 0 .4705em; }
 h5{  font-size:1.5rem;}
 h6{  font: italic 1.5rem bold;}
 
-//content
+/*content*/
 p,ul,li{
 @include margin-padding();
 }
@@ -86,6 +93,7 @@ p,ul{
   max-width:62.5ch;
 }
 
+/*unordered list text component*/
 ul{
   margin:.85em auto;
   padding-left:2ch;
@@ -94,11 +102,12 @@ ul{
     ul{
       margin:0 0 .4253em;
       padding-left: 0;
-      li:first-child{margin-top:0;}
+      li:first-child{margin-top:0;}/*avoid big gaps in sub-lists*/
     }
   }
 }
 
+/*Header navigation component for small devices*/
 header nav{
  
   a{
@@ -106,10 +115,12 @@ header nav{
     color:$base1;
   }
 }
+/*footer component for small devices*/
 footer{
   font-size:1rem;
   line-height:1.5882;
   color:$base1;
+  /*style any links in footer the same. nav included.*/
   a{
     &:link,&:visited{
       color:$base1;
@@ -121,6 +132,8 @@ footer{
     }
   }
 }
+
+/*Skip to main link - text/accessibility component*/ 
 #skip-to-main{
   font-size:3rem;
   font-weight:600;
@@ -132,12 +145,15 @@ footer{
   }
 }
 
-/////// Layout /////////
-/*This is in order of specificity — with less specific first*/
+/*////// Layout /////////*/
+
+/*I have tried to write this in order of specificity, less specific first. I don't want to be confused when a higher specificity affects a lower one.*/
 header{
  padding-bottom:.7083em;
  margin-bottom:1.4166em;
 }
+
+/*text & graphic component*/
 .two-column-flex{
   @include margin-padding();
   display:flex;
@@ -158,9 +174,9 @@ header{
   h4{
     @include margin-padding();
   }
+  /*specific to about page.*/
   #tldr{  border:.25em solid $cyan; }
   #resume{
-    // @include margin-padding();
     @extend #tldr;
     display:flex;
     flex-flow: column nowrap;
@@ -186,15 +202,18 @@ header{
   }
 }
 
+/*text/graphic components that take up majority of the screen real-estate*/
 .full-width-content{
   width:90vw;
   margin:0 auto;
 }
 
+/*hide any large splash image on small devices.*/
 .header-img{
   display:none;
 }
 
+/*Responsive graphic component*/
 .content-img{
   width:100%;
   img{
@@ -203,34 +222,7 @@ header{
   }
 }
 
-.social-icons{
-  min-width:50vw;
-  max-width:90vw;
-  // height:140px;
-  margin:3.4em auto 0;
-
-  display:flex;
-  flex-flow:row wrap;
-  justify-content:space-around;
-  align-items:center;
-
-  a{
-    display:flex;
-    flex-flow:column nowrap;
-    align-items:center;
-    justify-content:space-around;
-    // height:100px;
-   &:link,
-   &:visited{
-     border:none;
-     &:not(img){
-      text-decoration:underline;
-     }
-   } 
-   span{padding:.5em 1ch;}
-  }
-}
-
+/*page footer*/
 footer{
   display:flex;
   flex-direction: column;
@@ -247,22 +239,60 @@ footer{
     &.with-love{text-align: center;}
   }
 }
-/// Blogs!
+
+/*Graphic component*/
+
+/*make container*/
+.social-icons{
+  min-width:50vw;
+  max-width:90vw;
+  margin:3.4em auto 0;
+
+  display:flex;
+  flex-flow:row wrap;
+  justify-content:space-around;
+  align-items:center;
+/*push text link under icon*/
+  a{
+    display:flex;
+    flex-flow:column nowrap;
+    align-items:center;
+    justify-content:space-around;
+   &:link,
+   &:visited{
+     border:none;
+     &:not(img){
+      text-decoration:underline;
+     }
+   } 
+   span{padding:.5em 1ch;}/*give space to text*/
+  }
+}
+
+
+/*// Blog!//*/
+
+/*Dynamically insert indication that a post is a guest post. This would be better done with Javascript, since it can't be selected, and won't appear in the DOM tree.*/
 .guest{
+  /*After author's name*/
   .author::after{
     @include highlight-text();
     content:"Guest!";
     margin-left:1ch;
   }
+  /*before the title*/
   h3::before{
     content:"Guest Post: "
   }
 }
+
+/*text component*/
 .blog-post{
   display: flex;
   flex-direction: column;
   .author{
     margin:.75em 0;
+    /*Insert "Author: " before author name to save on markup. Replace with javascript when able*/
     &::before{
       content:"Author: ";
       font-weight:bold;
@@ -270,24 +300,31 @@ footer{
   }
   .post-date{
     margin:.75em 0;
+    /*Insert "Date Posted: " before author name to save on markup. Replace with javascript when able*/
     &::before{
       content:"Date Posted: ";
       font-weight:bold;
     }
   }
+  /*make images responisve*/
   .content-img{
     @include resposive-img();
-}
+  }
 }
 
-//Form
+/* Form component*/
 form{
   max-width:90vw;
   text-transform: capitalize;
+  /*give form same text properties as paragraphs*/
   @extend p;
+
+  /*Easily push inputs and labels onto new lines*/
   display:flex;
   flex-direction: column;
-    .form-deco{display:none;}
+
+  /*hide decoration used for desktop forms*/
+  .form-deco{display:none;}
   input{
     height:1.7em;
     padding:0 .5ch;
@@ -299,6 +336,8 @@ form{
       border:.15em solid $cyan;
       outline: $cyan solid .25em;
     }
+    /*::before and ::after can't be used on replaced elements*/
+    /*A <span> is used to attach the content to*/
     &:required+::before{
       content:">Required";
       @include highlight-text();
@@ -346,8 +385,8 @@ form{
 
 }
 
-/////Mobile-first Menu
-/*Change this. It's not working*/
+/*////Mobile-first Menu
+Change this. It's not working*/
 header nav{
   @include margin-padding();
   display:flex;
@@ -388,6 +427,7 @@ header nav{
     background:$colour-link;
     color:$colour-bg;
   }
+  /*hide current page title from menu to save screen space. The page is listed directly above the nav bar*/
   .current-page{display:none;}
 }
 #navigation:target{
@@ -407,7 +447,7 @@ header nav{
 }
 }
 }
-// Hide skip to main link
+/*/ Hide skip to main link*/
 #skip-to-main{
   position: absolute;
   top:-15rem;
@@ -422,7 +462,7 @@ header nav{
     top:0;
     left:1ch;
   }
-  // from https://css-tricks.com/the-shapes-of-css/#triangle-down-shape:
+  /* from: https://css-tricks.com/the-shapes-of-css/#triangle-down-shape*/
   &::after{
     content: "";
     position:absolute;

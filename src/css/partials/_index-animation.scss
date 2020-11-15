@@ -1,6 +1,9 @@
+
+//For animation component
+
 @import "mixins";
 
-//index.html specific
+//index.html specific. MAde sense to put this here. pushes nav to bottom of page.
 #index-container{
   @include margin-padding();
   display: flex;
@@ -10,30 +13,39 @@
   overflow: hidden;
 }
 
+//center content
 main.index-page{
   align-self:center;
-  max-width: 90vw;
+  max-width: 90vw; //prevent content overflowing on small devices
 }
 
+//create grid for text
 .intro-box {
   @include margin-padding();
   display:grid;
-  grid-template-columns:repeat(10, 1ch);
-  grid-template-rows:repeat(5,1em);
-  line-height: 1;
+  grid-template-columns:repeat(10, 1ch);//ch is used because it's the width of a 0. A monospace font means each character should be the same size.
+  grid-template-rows:repeat(5,1em);//em is used because it's height of the font.
+  line-height: 1;//A line height that is 100% the font size. For easy animation.
   font-size:3rem;
 }
 
+//Since a monospace font is used, each character will fill exactly one cell of the grid.
+//I would like to write this as a proper `@mixin` function to get the length of the string,
+//and calculate a number of lines of roughly equal spacing,
+//and generate grid tracks from that. But it's beyond my skills at the moment!
 .intro-text{
   color:$colour-bg; //Hide text while font loads!
   // @include intro-text();
   grid-column: 1/11;
   grid-row: 1/6;
   min-width:10ch;
+  //Ensure this text fits the grid tracks.
   font-size:3rem;
   line-height: 1;
 }
 
+//Hack for making text dissapear. It is placed over text in the grid.
+//the .wall is a container for two other elements: .cursor and .blind.
 .wall{
   width:10ch;
   height:1em;
@@ -46,15 +58,19 @@ main.index-page{
   animation: steps(10) 2.5s forwards type;
   margin-left:-.1ch;
 }
+
+//blue cursor. This begins the same colour as the background,
+//but is animated to appear as if the cursor has suddenly appeared.
 .cursor{
   background-color:$colour-cursor-start;
   opacity:1;
   grid-column-end:2;
   animation: 2.5s forwards cursor;
-  mix-blend-mode:exclusion;
+  // mix-blend-mode:exclusion;//experiment to make cursor change the colour of the text it's sitting over. Had mixed results.
 }
-.blind{background:$colour-bg;}
+.blind{background:$colour-bg;}//cover text that hasn't been "typed"
 
+//change text colour after font has loaded. I have allowed 1second for fonts to load, and the animation takes .01s to complete
 .intro-text{
   animation:.01s 1s forwards colour-text;
 }
@@ -65,6 +81,7 @@ main.index-page{
   to{color:$base0;}
 }
 
+//moves 4 character spaces to the left. On second thoughts, I should be shrinking the object to 0ch.
 @keyframes type-first-line{
   from{left:0;opacity:1;}
   99%{opacity:1;}
@@ -81,11 +98,13 @@ main.index-page{
   from{left:0; opacity:1}
   to{left:10ch;}
 }
+//Experiment to make cursor change the coour of the text it's sitting over. Mixed results. Center lines didn't change colour, but firstand last did
 /* @keyframes cursor-blend{
   from{background:$colour-cursor;mix-blend-mode:initial;}
   to{background:$colour-cursor;mix-blend-mode:exclusion;}
 } */
-@keyframes cursor{
+
+@keyframes cursor{ //make cursor appear
   0%{
     opacity:1;
     background:$colour-cursor;
@@ -94,18 +113,24 @@ main.index-page{
     opacity:1;
     background:$colour-cursor;
   }
-  100%{opacity:0;}
+  100%{opacity:0;} //make cursor dissapear
 }
+//make cursor blink
 @keyframes cursor-blink{
   from{opacity:0;}
   50%{opacity:1; background:$colour-cursor;}
   to{opacity:0;}
 }
+
+//animates first line.
 .line1{
   grid-row-start:1;
   animation: .74s steps(4) 2s forwards type-first-line;
   .cursor{animation:.75s 2s forwards cursor;}
 }
+
+//animates following lines. I should make a `@mixin` for this.
+//each line has an animation delay totalling the number of lines that come before it.
 .line2{
   grid-row-start:2;
   animation-delay:2.75s;
@@ -121,6 +146,8 @@ main.index-page{
   animation-delay:7.75s;
   .cursor{animation-delay:7.75s;}
 }
+
+//The final line. This is needed so the cursor blinks at the end.
 .line5{
   grid-row-start:5;
   animation: steps(10) 2.5s forwards 10.25s type-last-line;
