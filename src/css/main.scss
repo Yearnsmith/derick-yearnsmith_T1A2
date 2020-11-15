@@ -153,9 +153,35 @@ header{
   .sml-box{
    @include resposive-img();
   }
-  h4{  @include margin-padding(); }
+  h4{
+    @include margin-padding();
+  }
   #tldr{  border:.25em solid $cyan; }
-  #resume{  background: $cyan; padding-bottom:1em; }
+  #resume{
+    // @include margin-padding();
+    @extend #tldr;
+    display:flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    min-height:10rem;
+
+    //center link: https://stackoverflow.com/questions/32551291/in-css-flexbox-why-are-there-no-justify-items-and-justify-self-properties#33856609
+    a[download]{
+      @include margin-padding();
+      text-align:center;
+      margin:auto;
+      color:$base1;
+      text-decoration:underline;
+      border:none;
+      font-size:1.5rem;
+      span{
+        display:inline-block;
+        font-size:2rem;
+        position:relative;
+        top:.435em;
+      }
+    }
+  }
 }
 
 .full-width-content{

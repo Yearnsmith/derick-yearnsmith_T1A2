@@ -1,9 +1,19 @@
 @import "variables";
 /////////// @mixins /////////
+
+//For typing animation. To declare font & colour as eaarly as possible.
+@mixin intro-text{
+  font-family: 'Anonymous Pro',monospace;
+  color:$colour-bg; //Hide text while font loads!
+}
+
+//I use this a lot to overide inheritence
 @mixin margin-padding{
   margin:0;
   padding:0;
 }
+
+//Used for mar
 @mixin highlight-text {
   padding:0;
   background:$cyan;
@@ -33,8 +43,5 @@
     min-width:150px;
     width:100%;
     max-width:275px;
-    flex-grow:1;
-    // flex-shrink:2;
-    object-fit: contain;
   }
 }

@@ -31,30 +31,33 @@
       <section id="biography">
         <!--The .dual-flex-box begins as one column in small width, and expande to become a two column layout on larger screens. The .sml-box should shrink to be supplimentary to .lrg-box's content i.e. image, aside, etc. -->
         <div class="two-column-flex full-width-content">
-          <figure class="sml-box">
-            <!-- <img src="images/headshot.png" alt="Derick's face"> -->
-            <img src="http://placekitten.com/275/350" alt="Kittens in a basket!">
-            <figcaption>A Placeholder Image</figcaption>
-          </figure><!--/.sml-box-->
-
+          <div class="sml-box">
+            <figure>
+              <!-- <img src="images/headshot.png" alt="Derick's face"> -->
+              <img src="images/dericks-face.jpg" alt="A confused looking man">
+              <figcaption>This is Derick's face.</figcaption>
+            </figure>
+          </div><!--/.sml-box-->
           <div class="lrg-box">
             <p>
               Hi, Welcome to my portfolio!
             </p>
             <p>
-              I'm a full stack developer in training at Coder Academy &mdash; specialising in MEARN stack.
+              I'm a full stack developer in training at Coder Academy — specialising in MEARN stack.
             </p>
             <p>
               I also have a love for css, FOSS, and the indie web.
             </p>
           </div><!--/.lrg-box-->
 
+        </div>
+
         </div><!--/.dual-flex-box-->
       </section><!--/#biography-->
 
       <section id="experience">
         <h3>Experience</h3>
-        <div class="two-column-flex full-width-content">
+        <aside class="two-column-flex full-width-content">
           <div id="tldr" class="lrg-box">
             <h4>TL;DR</h4>
             <ul>
@@ -64,11 +67,12 @@
               <li>Plays well with others</li>
             </ul>
           </div><!--.lrg-box-->
-          <aside id="resume" class="sml-box">
+          <div id="resume" class="sml-box">
+            <!--Shout out to: https://css-tricks.com/building-good-download-button/-->
             <h4>Download my resume:</h4>
-            <button>Derick's Resume</button>
-          </aside><!--/.sml-box-->
-        </div><!--/.dual-column-flex-->
+            <a download href=""><span>&#9046;</span>Download Resume</a>
+          </div><!--/.sml-box-->
+        </aside><!--/.dual-column-flex-->
         <div class="full-width-content">
           <p>
             Self-taught in HTML & CSS, I have a few years experience as a web enthusiest, learning the ropes, and experimenting.

@@ -391,17 +391,37 @@ header {
   min-width: 150px;
   width: 100%;
   max-width: 275px;
+  flex-grow: 1;
+  object-fit: contain;
 }
 .two-column-flex h4 {
   margin: 0;
   padding: 0;
 }
-.two-column-flex #tldr {
+.two-column-flex #tldr, .two-column-flex #resume {
   border: 0.25em solid #2aa198;
 }
 .two-column-flex #resume {
-  background: #2aa198;
-  padding-bottom: 1em;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  min-height: 10rem;
+}
+.two-column-flex #resume a[download] {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  margin: auto;
+  color: #93a1a1;
+  text-decoration: underline;
+  border: none;
+  font-size: 1.5rem;
+}
+.two-column-flex #resume a[download] span {
+  display: inline-block;
+  font-size: 2rem;
+  position: relative;
+  top: 0.435em;
 }
 
 .full-width-content {
@@ -487,6 +507,8 @@ footer div.with-love, footer nav.with-love {
   min-width: 150px;
   width: 100%;
   max-width: 275px;
+  flex-grow: 1;
+  object-fit: contain;
 }
 
 form {
@@ -737,8 +759,7 @@ header nav .current-page {
 
   .full-width-content {
     width: 70vw;
-    margin: 0 auto 0 0;
-    padding-right: 4ch;
+    margin: 0 4ch 0 auto;
   }
 
   footer {
@@ -975,6 +996,7 @@ header nav .current-page {
     font-weight: bold;
     font-size: 140%;
     margin-top: 0.5em;
+    color: #93a1a1;
   }
 
   .full-width-content {
