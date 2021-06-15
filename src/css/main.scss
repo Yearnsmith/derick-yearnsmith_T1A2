@@ -60,7 +60,6 @@ h1{
   font-family:'Courier Prime';
   a:link{
     @include highlight-text();
-    color: $base03;
     background:$colour-link;
     border:none;
   }
