@@ -53,7 +53,6 @@ h2,h3,h4,h5,h6{
   font-weight:700;
   font-family: 'Courier Prime';
   @include highlight-text();
-  color:$base03;
   padding-left:2rem;
   line-height: 1;
 }
@@ -61,6 +60,7 @@ h1{
   font-family:'Courier Prime';
   a{
     @include highlight-text();
+    color: $base03;
     background:$colour-link;
     border:none;
   }
