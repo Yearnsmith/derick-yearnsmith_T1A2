@@ -58,7 +58,7 @@ h2,h3,h4,h5,h6{
 }
 h1{
   font-family:'Courier Prime';
-  a{
+  a:link{
     @include highlight-text();
     background:$colour-link;
     border:none;
